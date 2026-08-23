@@ -2,16 +2,21 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { usePathname } from "next/navigation";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { SplashSignal } from "@/shared/components/ui/splash-signal";
 
 export default function SplashScreen() {
   const [visible, setVisible] = useState(false);
   const reduceMotion = useReducedMotion();
+  const pathname = usePathname();
   const startedRef = useRef(false);
   const previousOverflowRef = useRef("");
+  const shouldSkipSplash = pathname === "/waitlist/confirm";
 
   useEffect(() => {
+    if (shouldSkipSplash) return;
+
     const shouldShow =
       startedRef.current ||
       !sessionStorage.getItem("tekglove-splash-seen-signal");
@@ -37,7 +42,9 @@ export default function SplashScreen() {
       window.clearTimeout(exitId);
       document.body.style.overflow = previousOverflow;
     };
-  }, [reduceMotion]);
+  }, [reduceMotion, shouldSkipSplash]);
+
+  if (shouldSkipSplash) return null;
 
   return (
     <AnimatePresence

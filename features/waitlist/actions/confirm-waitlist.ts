@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { confirmWaitlistEntry } from "../services/confirm-waitlist";
 import { sendWaitlistNotification } from "../services/send-waitlist-notification";
+import { syncConfirmedWaitlistContact } from "../services/sync-resend-contact";
 
 export async function confirmWaitlistAction(formData: FormData) {
   const token = formData.get("token");
@@ -12,6 +13,12 @@ export async function confirmWaitlistAction(formData: FormData) {
     const result = await confirmWaitlistEntry(token);
 
     if (result.status === "confirmed") {
+      try {
+        await syncConfirmedWaitlistContact(result.entry);
+      } catch (error) {
+        console.error("Could not sync confirmed Resend contact", error);
+      }
+
       try {
         await sendWaitlistNotification(result.entry);
       } catch (error) {

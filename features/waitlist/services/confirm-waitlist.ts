@@ -5,20 +5,22 @@ import { createSupabaseServerClient } from "@/shared/lib/supabase/server";
 
 const confirmationTokenSchema = z.string().regex(/^[A-Za-z0-9_-]{43}$/);
 
+export type ConfirmedWaitlistEntry = {
+  id: string;
+  countryCode: string | null;
+  email: string;
+  firstName: string;
+  intendedUse: string | null;
+  lastName: string;
+  organisationName: string | null;
+  productInterests: string[];
+  useCase: string | null;
+};
+
 export type WaitlistConfirmationResult =
   | {
       status: "confirmed";
-      entry: {
-        id: string;
-        countryCode: string | null;
-        email: string;
-        firstName: string;
-        intendedUse: string | null;
-        lastName: string;
-        organisationName: string | null;
-        productInterests: string[];
-        useCase: string | null;
-      };
+      entry: ConfirmedWaitlistEntry;
     }
   | { status: "invalid" };
 
