@@ -1,6 +1,7 @@
 "use server";
 
 import { ZodError } from "zod";
+import { waitlistSubmissionSchema } from "../schemas/waitlist-submission";
 import { sendWaitlistConfirmationEmail } from "../services/send-confirmation-email";
 import {
   deleteWaitlistEntry,
@@ -8,6 +9,7 @@ import {
   submitWaitlistEntry,
   WaitlistSubmissionError,
 } from "../services/submit-waitlist";
+import { verifyWaitlistTurnstileToken } from "../services/verify-turnstile";
 
 export type SubmitWaitlistActionResult =
   { status: "success" } | { status: "error"; message: string };
@@ -18,7 +20,19 @@ export async function submitWaitlistAction(
   let entryId: string | undefined;
 
   try {
-    const entry = await submitWaitlistEntry(input);
+    const submission = waitlistSubmissionSchema.parse(input);
+    const isHuman = await verifyWaitlistTurnstileToken(
+      submission.turnstileToken,
+    );
+
+    if (!isHuman) {
+      return {
+        status: "error",
+        message: "Please complete the verification and try again.",
+      };
+    }
+
+    const entry = await submitWaitlistEntry(submission);
     entryId = entry.entryId;
 
     await sendWaitlistConfirmationEmail({

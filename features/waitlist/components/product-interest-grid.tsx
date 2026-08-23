@@ -41,22 +41,30 @@ const accentClasses: Record<
 type ProductInterestGridProps = {
   selected: ProductAccent[];
   onChange: (products: ProductAccent[]) => void;
-  invalid?: boolean;
+  error?: string;
 };
 
 export function ProductInterestGrid({
   selected,
   onChange,
-  invalid = false,
+  error,
 }: ProductInterestGridProps) {
   return (
-    <fieldset aria-describedby={invalid ? "product-interest-error" : undefined}>
+    <fieldset
+      aria-describedby={error ? "product-interest-error" : undefined}
+      aria-invalid={Boolean(error)}
+    >
       <legend className="mb-2 text-sm font-medium text-white">
         Which gloves are you interested in?{" "}
         <span className="text-orange" aria-hidden="true">
           *
         </span>
         <span className="sr-only">Required</span>
+        {error ? (
+          <span aria-hidden="true" className="ml-2 font-normal text-red-400">
+            ({error})
+          </span>
+        ) : null}
       </legend>
       <p className="mb-4 text-sm leading-relaxed text-white/45">
         Choose as many as you like.
@@ -73,7 +81,9 @@ export function ProductInterestGrid({
               className={`pressable group relative flex min-h-18 cursor-pointer items-start gap-2.5 rounded-xl border px-3.5 py-3 transition-[border-color,background-color,transform] duration-200 ${
                 isSelected
                   ? accent.selected
-                  : "border-white/10 bg-white/3 hover:border-white/20 hover:bg-white/5"
+                  : error
+                    ? "border-red-400/70 bg-red-400/5 hover:border-red-400"
+                    : "border-white/10 bg-white/3 hover:border-white/20 hover:bg-white/5"
               }`}
             >
               <input
@@ -113,13 +123,9 @@ export function ProductInterestGrid({
         })}
       </div>
 
-      {invalid && (
-        <p
-          id="product-interest-error"
-          role="alert"
-          className="mt-3 text-sm text-orange"
-        >
-          Select at least one glove to continue.
+      {error && (
+        <p id="product-interest-error" role="alert" className="sr-only">
+          {error}
         </p>
       )}
     </fieldset>

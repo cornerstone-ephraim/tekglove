@@ -1,5 +1,7 @@
 import "server-only";
 
+const turnstileTestSecretKey = "1x0000000000000000000000000000000AA";
+
 function requireServerEnvironmentVariable(name: string) {
   const value = process.env[name]?.trim();
 
@@ -26,6 +28,10 @@ export const serverEnv = {
   siteUrl: requireServerUrl("SITE_URL"),
   supabaseUrl: requireServerEnvironmentVariable("SUPABASE_URL"),
   supabaseSecretKey: requireServerEnvironmentVariable("SUPABASE_SECRET_KEY"),
+  turnstileSecretKey:
+    process.env.NODE_ENV === "production"
+      ? requireServerEnvironmentVariable("TURNSTILE_SECRET_KEY")
+      : turnstileTestSecretKey,
   waitlistNotificationEmail: requireServerEnvironmentVariable(
     "WAITLIST_NOTIFICATION_EMAIL",
   ),

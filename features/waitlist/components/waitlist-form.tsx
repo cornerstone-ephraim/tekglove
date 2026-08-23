@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { ecosystemProducts } from "@/content/products";
 import { Button } from "@/shared/components/ui/button";
+import { Turnstile } from "@/shared/components/ui/turnstile";
 import {
   waitlistRoles,
   waitlistStepContent,
@@ -26,6 +27,22 @@ function RequiredMark() {
       <span className="sr-only">Required</span>
     </>
   );
+}
+
+function FieldError({ error }: { error?: string }) {
+  return error ? (
+    <span aria-hidden="true" className="ml-2 font-normal text-red-400">
+      ({error})
+    </span>
+  ) : null;
+}
+
+function getFieldClassName(hasError: boolean) {
+  return `${fieldClassName} ${
+    hasError
+      ? "border-red-400/70 hover:border-red-400 focus:border-red-400 focus:shadow-[0_0_0_3px_rgba(248,113,113,0.12)]"
+      : ""
+  }`;
 }
 
 type WaitlistFormProps = {
@@ -76,6 +93,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             {...motionState}
             transition={transition}
             onSubmit={form.continueFromDetails}
+            noValidate
             className="space-y-6"
           >
             <div className="grid gap-5 sm:grid-cols-2">
@@ -83,33 +101,59 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
                 <span className="mb-2 block text-sm font-medium text-white">
                   First name
                   <RequiredMark />
+                  <FieldError error={form.detailErrors.firstName} />
                 </span>
                 <input
                   type="text"
                   name="firstName"
                   autoComplete="given-name"
-                  required
                   value={form.firstName}
-                  onChange={(event) => form.setFirstName(event.target.value)}
+                  onChange={(event) =>
+                    form.updateDetail("firstName", event.target.value)
+                  }
                   placeholder="Your first name"
-                  className={fieldClassName}
+                  aria-invalid={Boolean(form.detailErrors.firstName)}
+                  aria-describedby={
+                    form.detailErrors.firstName ? "first-name-error" : undefined
+                  }
+                  className={getFieldClassName(
+                    Boolean(form.detailErrors.firstName),
+                  )}
                 />
+                {form.detailErrors.firstName ? (
+                  <span id="first-name-error" className="sr-only">
+                    {form.detailErrors.firstName}
+                  </span>
+                ) : null}
               </label>
               <label className="block">
                 <span className="mb-2 block text-sm font-medium text-white">
                   Last name
                   <RequiredMark />
+                  <FieldError error={form.detailErrors.lastName} />
                 </span>
                 <input
                   type="text"
                   name="lastName"
                   autoComplete="family-name"
-                  required
                   value={form.lastName}
-                  onChange={(event) => form.setLastName(event.target.value)}
+                  onChange={(event) =>
+                    form.updateDetail("lastName", event.target.value)
+                  }
                   placeholder="Your last name"
-                  className={fieldClassName}
+                  aria-invalid={Boolean(form.detailErrors.lastName)}
+                  aria-describedby={
+                    form.detailErrors.lastName ? "last-name-error" : undefined
+                  }
+                  className={getFieldClassName(
+                    Boolean(form.detailErrors.lastName),
+                  )}
                 />
+                {form.detailErrors.lastName ? (
+                  <span id="last-name-error" className="sr-only">
+                    {form.detailErrors.lastName}
+                  </span>
+                ) : null}
               </label>
             </div>
 
@@ -117,32 +161,62 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
               <span className="mb-2 block text-sm font-medium text-white">
                 Email address
                 <RequiredMark />
+                <FieldError error={form.detailErrors.email} />
               </span>
               <input
                 type="email"
                 name="email"
                 autoComplete="email"
-                required
                 value={form.email}
-                onChange={(event) => form.setEmail(event.target.value)}
+                onChange={(event) =>
+                  form.updateDetail("email", event.target.value)
+                }
                 placeholder="you@example.com"
-                className={fieldClassName}
+                aria-invalid={Boolean(form.detailErrors.email)}
+                aria-describedby={
+                  form.detailErrors.email ? "email-error" : undefined
+                }
+                className={getFieldClassName(Boolean(form.detailErrors.email))}
               />
+              {form.detailErrors.email ? (
+                <span id="email-error" className="sr-only">
+                  {form.detailErrors.email}
+                </span>
+              ) : null}
             </label>
 
-            <label className="flex cursor-pointer items-start gap-3 rounded-xl border border-white/8 bg-black/20 p-4">
+            <label
+              className={`flex cursor-pointer items-start gap-3 rounded-xl border bg-black/20 p-4 transition-colors ${
+                form.detailErrors.marketingConsent
+                  ? "border-red-400/70"
+                  : "border-white/8"
+              }`}
+            >
               <input
                 type="checkbox"
                 name="marketingConsent"
-                required
                 checked={form.consent}
-                onChange={(event) => form.setConsent(event.target.checked)}
+                onChange={(event) =>
+                  form.updateDetail("marketingConsent", event.target.checked)
+                }
+                aria-invalid={Boolean(form.detailErrors.marketingConsent)}
+                aria-describedby={
+                  form.detailErrors.marketingConsent
+                    ? "marketing-consent-error"
+                    : undefined
+                }
                 className="mt-0.5 h-4 w-4 shrink-0 accent-orange"
               />
               <span className="text-xs leading-relaxed text-white/55">
                 I agree to receive TekGlove development updates and early access
                 invitations. I can unsubscribe at any time.
                 <RequiredMark />
+                <FieldError error={form.detailErrors.marketingConsent} />
+                {form.detailErrors.marketingConsent ? (
+                  <span id="marketing-consent-error" className="sr-only">
+                    {form.detailErrors.marketingConsent}
+                  </span>
+                ) : null}
               </span>
             </label>
 
@@ -169,7 +243,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             <ProductInterestGrid
               selected={form.selectedProducts}
               onChange={form.updateProductInterests}
-              invalid={form.showProductError}
+              error={form.productError}
             />
 
             <div className="flex flex-col-reverse justify-between gap-3 sm:flex-row">
@@ -267,6 +341,13 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
               </p>
             ) : null}
 
+            <Turnstile
+              key={form.turnstileResetKey}
+              onVerifyAction={form.setTurnstileToken}
+              onExpireAction={() => form.setTurnstileToken("")}
+              onErrorAction={() => form.setTurnstileToken("")}
+            />
+
             <div className="flex flex-col-reverse justify-between gap-3 sm:flex-row">
               <Button
                 type="button"
@@ -278,7 +359,10 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
               >
                 Back
               </Button>
-              <Button type="submit" disabled={form.isSubmitting}>
+              <Button
+                type="submit"
+                disabled={form.isSubmitting || !form.turnstileToken}
+              >
                 {form.isSubmitting ? "Joining..." : "Join the waitlist"}
               </Button>
             </div>
