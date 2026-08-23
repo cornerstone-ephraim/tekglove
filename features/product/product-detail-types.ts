@@ -37,6 +37,16 @@ export type ProductDetailConfig = {
     description: string;
     capabilities: Array<{ title: string; description: string }>;
   };
+  companion?: {
+    kicker: string;
+    title: string;
+    titleAccent: string;
+    description: string;
+    primaryImage: string;
+    primaryImageAlt: string;
+    secondaryImage: string;
+    secondaryImageAlt: string;
+  };
   useCases: {
     kicker: string;
     title: string;

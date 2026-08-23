@@ -16,12 +16,14 @@ import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { ButtonLink } from "@/shared/components/ui/button";
 import {
   productDetailConfigs,
+  type ProductDetailConfig,
   type PublishedProductName,
 } from "./product-detail-config";
 import { ProductVisual } from "./product-visual";
 import { ProductCta } from "./components/product-cta";
 import { ProductSpecifications } from "./components/product-specifications";
 import { ProductFaq } from "./components/product-faq";
+import { ProductCompanion } from "./components/product-companion";
 
 export default function ProductPage({
   productName,
@@ -29,7 +31,7 @@ export default function ProductPage({
   productName: PublishedProductName;
 }) {
   const reduceMotion = useReducedMotion();
-  const config = productDetailConfigs[productName];
+  const config: ProductDetailConfig = productDetailConfigs[productName];
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -264,6 +266,10 @@ export default function ProductPage({
           ))}
         </motion.div>
       </section>
+
+      {config.companion ? (
+        <ProductCompanion companion={config.companion} />
+      ) : null}
 
       {/* Use cases */}
       <section className="border-b border-white/10 px-6 py-24 md:px-12">

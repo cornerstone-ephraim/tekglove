@@ -178,6 +178,18 @@ export const productDetailConfigs = {
         },
       ],
     },
+    companion: {
+      kicker: "Kradle Patch · Companion Concept",
+      title: "Care That",
+      titleAccent: "Stays Close.",
+      description:
+        "The Kradle Patch explores a body-worn companion format within Kradle's connected-care ecosystem. It extends the product story beyond glove-led interactions while its sensing role and final applications continue to be defined.",
+      primaryImage: "/images/kradle-patch-worn.webp",
+      primaryImageAlt: "Pregnant woman wearing a Kradle Patch on her abdomen",
+      secondaryImage: "/images/kradle-patch-form-factors.webp",
+      secondaryImageAlt:
+        "Kradle Patch concepts in adhesive and band-worn formats",
+    },
     useCases: {
       kicker: "Care Use Cases",
       title: "Designed Around",
