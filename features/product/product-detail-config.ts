@@ -1,5 +1,4 @@
 import {
-  Baby,
   Crosshair,
   Hand,
   Headphones,
@@ -105,13 +104,12 @@ export const productDetailConfigs = {
       titleAccent: "Move Smarter.",
       description:
         "Join the TekGlove early access list for KINETIX development updates, beta opportunities, and product availability.",
-      visual: { image: "/images/kinetix-angle.webp", icon: Crosshair },
     },
   },
   Kradle: {
     name: "Kradle",
     accentColor: "kradle",
-    accentSource: "#d86398",
+    accentSource: "#786090",
     mark: "KRADLE™",
     eyebrow: "KRADLE™ · Maternal Health",
     title: "Connected",
@@ -122,7 +120,13 @@ export const productDetailConfigs = {
     shader: "sensor",
     signalLabel: "Smart Dorsal Sensor",
     signalValue: "Movement · Gesture · Biometrics · Alerts",
-    heroVisual: { icon: HeartPulse },
+    heroVisual: {
+      image: "/images/kradle-care.png",
+      imageAlt:
+        "Midwife using the Kradle glove during a maternal health examination",
+      presentation: "editorial",
+      icon: HeartPulse,
+    },
     specifications: [
       { label: "Purpose", value: "Maternal and health monitoring" },
       { label: "Core Technology", value: "Smart Dorsal Sensor" },
@@ -133,22 +137,7 @@ export const productDetailConfigs = {
       { label: "Connectivity", value: "Bluetooth / Wi-Fi" },
       { label: "Support", value: "AI guidance · Care alerts in development" },
     ],
-    showcases: [
-      {
-        icon: HeartPulse,
-        kicker: "Left Hand · Shared Interface",
-        title: "Smart Interface Glove",
-        description:
-          "The Smart Dorsal Sensor supports maternal biometrics, gestures, feedback, alerts, and connectivity while keeping important information close at hand.",
-      },
-      {
-        icon: Baby,
-        kicker: "Right Hand · Specialist Module",
-        title: "Doppler Sensor Glove",
-        description:
-          "The specialist Doppler module is designed to support fetal heartbeat detection and add movement context to KRADLE's connected maternal care system.",
-      },
-    ],
+    showcases: [],
     intelligence: {
       kicker: "Hand-Connected Care",
       title: "Signals Become",
@@ -178,17 +167,27 @@ export const productDetailConfigs = {
         },
       ],
     },
-    companion: {
-      kicker: "Kradle Patch · Companion Concept",
-      title: "Care That",
-      titleAccent: "Stays Close.",
+    overview: {
+      kicker: "The Kradle Glove",
+      title: "Purpose-Built for",
+      titleAccent: "Connected Care.",
       description:
-        "The Kradle Patch explores a body-worn companion format within Kradle's connected-care ecosystem. It extends the product story beyond glove-led interactions while its sensing role and final applications continue to be defined.",
-      primaryImage: "/images/kradle-patch-worn.webp",
-      primaryImageAlt: "Pregnant woman wearing a Kradle Patch on her abdomen",
-      secondaryImage: "/images/kradle-patch-form-factors.webp",
-      secondaryImageAlt:
-        "Kradle Patch concepts in adhesive and band-worn formats",
+        "A wearable Doppler glove designed to help midwives and healthcare professionals bring fetal heartbeat monitoring into connected maternal care.",
+      image: "/images/kradle-glove-overview.png",
+      imageAlt:
+        "Palm and dorsal views of the Kradle wearable fetal Doppler glove",
+      technical: {
+        kicker: "Technical Breakdown",
+        title: "Inside the Kradle Glove.",
+        description:
+          "A closer view of the sensing architecture, display, wrist system, and charging details that shape the Kradle Glove concept.",
+        crossSectionImage: "/images/kradle-glove-cross-section.png",
+        crossSectionImageAlt:
+          "Exploded cross-section of the Kradle glove showing its display, electronics, battery, haptic motor, Doppler transducer, acoustic coupling pad, and palm layer",
+        detailImage: "/images/kradle-glove-detail-views.png",
+        detailImageAlt:
+          "Close-up views of the Kradle glove Doppler transducer, display, adjustable wrist strap, and USB-C charging port",
+      },
     },
     useCases: {
       kicker: "Care Use Cases",
@@ -209,7 +208,6 @@ export const productDetailConfigs = {
       titleAccent: "Connected Care.",
       description:
         "Join the TekGlove early access list for KRADLE development updates, collaboration opportunities, and future availability.",
-      visual: { icon: HeartPulse },
     },
   },
   Kursor: {
@@ -301,7 +299,6 @@ export const productDetailConfigs = {
       titleAccent: "Natural Control.",
       description:
         "Join the TekGlove early access list for KURSOR development updates, testing opportunities, and future availability.",
-      visual: { icon: MousePointer2 },
     },
   },
 } satisfies Record<PublishedProductName, ProductDetailConfig>;

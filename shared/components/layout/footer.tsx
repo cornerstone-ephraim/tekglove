@@ -20,7 +20,7 @@ export default function Footer() {
   return (
     <footer
       id="site-footer"
-      className="relative z-0 scroll-mt-16 overflow-hidden border-t border-white/8 bg-surface text-primary lg:sticky lg:bottom-0 lg:min-h-[78svh]"
+      className="relative z-0 scroll-mt-16 overflow-hidden border-t border-white/8 bg-surface text-primary lg:min-h-[78svh]"
     >
       <div
         aria-hidden="true"
@@ -139,7 +139,7 @@ function FooterContact() {
         <ContactItem icon={<Mail size={16} aria-hidden="true" />}>
           <a
             href={`mailto:${site.email}`}
-            className="break-all transition-colors duration-200 hover:text-white"
+            className="break-all transition-colors duration-200 hover:text-orange"
           >
             {site.email}
           </a>
@@ -155,7 +155,7 @@ function FooterContact() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-4 font-sans text-sm leading-[1.75] text-white/68 transition-colors duration-200 hover:text-white"
+              className="group flex items-center gap-4 font-sans text-sm leading-[1.75] text-white/68 transition-colors duration-200 hover:text-orange"
               aria-label={`TekGlove on ${social.platform}`}
             >
               <span className="grid size-9 shrink-0 place-items-center rounded-full bg-surface text-orange transition-colors duration-200 group-hover:bg-orange/10">

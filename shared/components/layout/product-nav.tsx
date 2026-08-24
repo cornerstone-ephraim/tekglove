@@ -8,13 +8,13 @@ import { productNavLinks } from "@/content/navigation";
 
 type ProductMenuProps = {
   pathname: string;
-  onNavigate?: () => void;
+  onNavigateAction?: () => void;
   reduceMotion: boolean;
 };
 
 export function DesktopProductMenu({
   pathname,
-  onNavigate,
+  onNavigateAction,
   reduceMotion,
 }: ProductMenuProps) {
   const [open, setOpen] = useState(false);
@@ -39,11 +39,11 @@ export function DesktopProductMenu({
 
   const close = () => {
     setOpen(false);
-    onNavigate?.();
+    onNavigateAction?.();
   };
 
   return (
-    <li ref={menuRef} className="relative flex items-center">
+    <li ref={menuRef} className="relative flex cursor-pointer items-center">
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
@@ -100,7 +100,7 @@ export function DesktopProductMenu({
 
 export function MobileProductMenu({
   pathname,
-  onNavigate,
+  onNavigateAction,
   reduceMotion,
 }: ProductMenuProps) {
   const [open, setOpen] = useState(pathname.startsWith("/product"));
@@ -141,7 +141,7 @@ export function MobileProductMenu({
                 <Link
                   key={link.href}
                   href={link.href}
-                  onClick={onNavigate}
+                  onClick={onNavigateAction}
                   className={`rounded-xl px-4 py-3 font-sans text-base font-medium transition-colors duration-200 ${
                     pathname === link.href
                       ? "bg-orange/10 text-orange"

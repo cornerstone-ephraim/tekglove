@@ -10,17 +10,35 @@ type ProductVisualProps = ProductVisualConfig & {
 
 export function ProductVisual({
   image,
+  imageAlt = "",
+  presentation = "product",
   icon: Icon,
   delay = 0,
   priority = false,
   imageClassName = "max-w-136",
 }: ProductVisualProps) {
+  if (image && presentation === "editorial") {
+    return (
+      <figure className="relative z-10 aspect-4/3 w-full max-w-200 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
+        <Image
+          src={image}
+          alt={imageAlt}
+          fill
+          sizes="(min-width: 1024px) 55vw, 100vw"
+          className="object-cover"
+          priority={priority}
+        />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
+      </figure>
+    );
+  }
+
   if (image) {
     return (
       <FloatingGlove delay={delay} className="relative z-10 w-full">
         <Image
           src={image}
-          alt=""
+          alt={imageAlt}
           width={760}
           height={760}
           className={`h-auto w-full object-contain ${imageClassName}`}

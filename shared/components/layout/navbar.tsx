@@ -89,7 +89,7 @@ export default function Navbar() {
                 <DesktopProductMenu
                   key={href}
                   pathname={pathname}
-                  onNavigate={close}
+                  onNavigateAction={close}
                   reduceMotion={Boolean(reduceMotion)}
                 />
               );
@@ -175,7 +175,7 @@ export default function Navbar() {
                     {href === "/product" ? (
                       <MobileProductMenu
                         pathname={pathname}
-                        onNavigate={close}
+                        onNavigateAction={close}
                         reduceMotion={Boolean(reduceMotion)}
                       />
                     ) : (
