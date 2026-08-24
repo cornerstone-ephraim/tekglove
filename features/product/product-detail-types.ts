@@ -5,6 +5,8 @@ export type PublishedProductName = "Kradle" | "Kinetix" | "Kursor";
 
 export type ProductVisual = {
   image?: string;
+  imageAlt?: string;
+  presentation?: "product" | "editorial";
   icon: LucideIcon;
 };
 
@@ -37,15 +39,22 @@ export type ProductDetailConfig = {
     description: string;
     capabilities: Array<{ title: string; description: string }>;
   };
-  companion?: {
+  overview?: {
     kicker: string;
     title: string;
     titleAccent: string;
     description: string;
-    primaryImage: string;
-    primaryImageAlt: string;
-    secondaryImage: string;
-    secondaryImageAlt: string;
+    image: string;
+    imageAlt: string;
+    technical: {
+      kicker: string;
+      title: string;
+      description: string;
+      crossSectionImage: string;
+      crossSectionImageAlt: string;
+      detailImage: string;
+      detailImageAlt: string;
+    };
   };
   useCases: {
     kicker: string;
@@ -58,6 +67,5 @@ export type ProductDetailConfig = {
     title: string;
     titleAccent: string;
     description: string;
-    visual: ProductVisual;
   };
 };
