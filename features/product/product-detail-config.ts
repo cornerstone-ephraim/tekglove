@@ -121,7 +121,7 @@ export const productDetailConfigs = {
     signalLabel: "Smart Dorsal Sensor",
     signalValue: "Movement · Gesture · Biometrics · Alerts",
     heroVisual: {
-      image: "/images/kradle-care.png",
+      image: "/images/kradle-care.webp",
       imageAlt:
         "Midwife using the Kradle glove during a maternal health examination",
       presentation: "editorial",
@@ -173,7 +173,7 @@ export const productDetailConfigs = {
       titleAccent: "Connected Care.",
       description:
         "A wearable Doppler glove designed to help midwives and healthcare professionals bring fetal heartbeat monitoring into connected maternal care.",
-      image: "/images/kradle-glove-overview.png",
+      image: "/images/kradle-glove-overview.webp",
       imageAlt:
         "Palm and dorsal views of the Kradle wearable fetal Doppler glove",
       technical: {
@@ -181,10 +181,10 @@ export const productDetailConfigs = {
         title: "Inside the Kradle Glove.",
         description:
           "A closer view of the sensing architecture, display, wrist system, and charging details that shape the Kradle Glove concept.",
-        crossSectionImage: "/images/kradle-glove-cross-section.png",
+        crossSectionImage: "/images/kradle-glove-cross-section.webp",
         crossSectionImageAlt:
           "Exploded cross-section of the Kradle glove showing its display, electronics, battery, haptic motor, Doppler transducer, acoustic coupling pad, and palm layer",
-        detailImage: "/images/kradle-glove-detail-views.png",
+        detailImage: "/images/kradle-glove-detail-views.webp",
         detailImageAlt:
           "Close-up views of the Kradle glove Doppler transducer, display, adjustable wrist strap, and USB-C charging port",
       },
