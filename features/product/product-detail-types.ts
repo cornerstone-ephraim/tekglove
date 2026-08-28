@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
 import type { ProductAccent } from "@/content/products";
 
-export type PublishedProductName = "Kradle" | "Kinetix" | "Kursor";
+export type PublishedProductName = "Kradle" | "Kinetix" | "Kovert" | "Kursor";
 
 export type ProductVisual = {
   image?: string;
@@ -56,6 +56,7 @@ export type ProductDetailConfig = {
       detailImageAlt: string;
     };
   };
+  commandArchitecture?: true;
   useCases: {
     kicker: string;
     title: string;

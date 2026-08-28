@@ -24,6 +24,7 @@ import { ProductCta } from "./components/product-cta";
 import { ProductSpecifications } from "./components/product-specifications";
 import { ProductFaq } from "./components/product-faq";
 import { ProductOverview } from "./components/product-overview";
+import { KovertCommandArchitecture } from "./components/kovert-command-architecture";
 
 export default function ProductPage({
   productName,
@@ -153,6 +154,8 @@ export default function ProductPage({
       </section>
 
       {config.overview ? <ProductOverview overview={config.overview} /> : null}
+
+      {config.commandArchitecture ? <KovertCommandArchitecture /> : null}
 
       <ProductSpecifications specifications={config.specifications} />
 

@@ -27,7 +27,7 @@ export const platformFaqs: FaqItem[] = [
   {
     question: "Are TekGlove products available now?",
     answer:
-      "TekGlove products are currently in development. Kradle, Kinetix, and Kursor are the initial focus products, while the wider six-glove ecosystem continues to evolve.",
+      "TekGlove products are currently in development. Kradle, Kinetix, Kovert, and Kursor are the initial focus products, while the wider six-glove ecosystem continues to evolve.",
   },
   {
     question: "How can I get early access?",
@@ -71,6 +71,23 @@ export const productFaqs = {
         "No. Kradle is intended to support monitoring and connected care. It is not a replacement for qualified medical advice, diagnosis, treatment, or emergency services.",
     },
   ],
+  Kovert: [
+    {
+      question: "What does the Kovert Smart Sensor control?",
+      answer:
+        "Kovert is being developed to monitor and control connected drone, floor robot, smart glasses, and 360-degree body cameras through one dorsal-mounted interface.",
+    },
+    {
+      question: "Does Kovert require a phone or separate controller?",
+      answer:
+        "The Kovert Smart Sensor is designed to serve as the central wearable command unit, reducing the need to reach for a phone, tablet, or separate camera controller during supported operations.",
+    },
+    {
+      question: "Who is Kovert intended for?",
+      answer:
+        "Kovert is intended for military, law enforcement, private security, emergency-response, search-and-rescue, and professional surveillance teams.",
+    },
+  ],
   Kursor: [
     {
       question: "What can Kursor control?",
@@ -88,4 +105,4 @@ export const productFaqs = {
         "Kursor is being developed as a wearable input option that can reduce reliance on a traditional mouse for supported actions. Final compatibility and control options will depend on the connected device and application.",
     },
   ],
-} satisfies Record<"Kradle" | "Kinetix" | "Kursor", FaqItem[]>;
+} satisfies Record<"Kradle" | "Kinetix" | "Kovert" | "Kursor", FaqItem[]>;
