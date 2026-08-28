@@ -27,7 +27,7 @@ export type EcosystemProduct = {
   };
 };
 
-export const ecosystemProducts = [
+const ecosystemProductCatalog = [
   {
     id: "01",
     slug: "kradle",
@@ -118,7 +118,7 @@ export const ecosystemProducts = [
     },
   },
   {
-    id: "03",
+    id: "04",
     slug: "kursor",
     name: "Kursor",
     mark: "KURSOR™",
@@ -164,7 +164,7 @@ export const ecosystemProducts = [
     },
   },
   {
-    id: "04",
+    id: "03",
     slug: "kovert",
     name: "Kovert",
     mark: "KOVERT™",
@@ -175,42 +175,43 @@ export const ecosystemProducts = [
     accentSource: "#b6a36a",
     accentAnchor: 500,
     tagline: "Mission Ready. Hands Connected.",
-    href: null,
+    href: "/product/kovert",
     image: null,
-    focus: "ecosystem",
+    focus: "primary",
     features: [
-      "Secure hands-free communications",
-      "Silent haptic alerts",
-      "Team location & biometric awareness",
-      "Drone & robotic system control",
-      "AR glasses & night-operation integration",
-      "Gesture-based command interface",
+      "Live multi-camera video monitoring",
+      "Synchronized recording & image capture",
+      "Integrated professional audio recording",
+      "Multi-system GPS telemetry",
+      "Remote camera & device management",
+      "Dorsal-mounted tactical command interface",
     ],
     users: [
       "Armed forces",
       "Law enforcement",
-      "Border security",
+      "Private security",
       "Search and rescue",
       "Disaster response",
-      "Security patrols",
+      "Emergency services",
     ],
     applications: [
-      "Infantry operations",
-      "Border security",
-      "Special forces",
+      "Reconnaissance operations",
+      "Tactical response",
+      "Operational surveillance",
       "Search and rescue",
       "Disaster response",
-      "Security patrols",
+      "Incident monitoring",
     ],
     value:
       "Mission-ready intelligence and control without taking hands off the task.",
     architecture: {
       core: "Smart Dorsal Sensor",
-      specialistModule: "Tactical command interface",
+      specialistModule: "Removable tactical command and monitoring module",
       accessoryIntegrations: [
-        "Secure communications",
-        "AR smart glasses",
-        "Drone and robotic systems",
+        "Drone camera",
+        "Floor robot camera",
+        "Smart glasses camera",
+        "360° body camera",
       ],
     },
   },
@@ -312,3 +313,22 @@ export const ecosystemProducts = [
     },
   },
 ] satisfies EcosystemProduct[];
+
+const ecosystemProductOrder: ProductAccent[] = [
+  "kradle",
+  "kinetix",
+  "kovert",
+  "kursor",
+  "kapture",
+  "konnect",
+];
+
+export const ecosystemProducts = ecosystemProductOrder.map((slug) => {
+  const product = ecosystemProductCatalog.find((item) => item.slug === slug);
+
+  if (!product) {
+    throw new Error(`Missing ecosystem product configuration: ${slug}`);
+  }
+
+  return product;
+});

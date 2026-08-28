@@ -4,6 +4,7 @@ import {
   Headphones,
   HeartPulse,
   MousePointer2,
+  Shield,
 } from "lucide-react";
 import type {
   ProductDetailConfig,
@@ -208,6 +209,101 @@ export const productDetailConfigs = {
       titleAccent: "Connected Care.",
       description:
         "Join the TekGlove early access list for KRADLE development updates, collaboration opportunities, and future availability.",
+    },
+  },
+  Kovert: {
+    name: "Kovert",
+    accentColor: "kovert",
+    accentSource: "#b6a36a",
+    mark: "KOVERT™",
+    eyebrow: "KOVERT™ · Tactical Intelligence",
+    title: "Mission",
+    titleAccent: "Control",
+    subtitle: "Mission Ready. Hands Connected.",
+    introduction:
+      "The tactical intelligence expression of the TekGlove platform, transforming the back of the hand into a connected command centre for live monitoring, recording, telemetry, and remote device control.",
+    shader: "intelligence",
+    signalLabel: "Smart Dorsal Sensor",
+    signalValue: "Video · Audio · Telemetry · Control",
+    heroVisual: { icon: Shield },
+    commandArchitecture: true,
+    specifications: [
+      {
+        label: "Purpose",
+        value: "Tactical command and mission monitoring",
+      },
+      { label: "Core Technology", value: "Removable Smart Dorsal Sensor" },
+      {
+        label: "Display",
+        value: "Rugged high-brightness touchscreen concept",
+      },
+      {
+        label: "Visual Network",
+        value: "Drone · Floor robot · Smart glasses · 360° body camera",
+      },
+      { label: "Connectivity", value: "Wi-Fi · Bluetooth" },
+      {
+        label: "Telemetry",
+        value: "GPS · Galileo · GLONASS · BeiDou",
+      },
+      {
+        label: "Audio & Storage",
+        value: "Microphone · Speaker · Internal storage",
+      },
+      {
+        label: "Glove Platform",
+        value: "Weather-resistant · Quick-release sensor dock",
+      },
+    ],
+    showcases: [],
+    intelligence: {
+      kicker: "Core Mission Functions",
+      title: "One Interface.",
+      titleAccent: "Complete Awareness.",
+      description:
+        "KOVERT brings live feeds, synchronized recording, professional audio, and positioning data into a single hand-worn command surface.",
+      capabilities: [
+        {
+          title: "Live Video Command",
+          description:
+            "Monitor single, dual, quad, picture-in-picture, and 360-degree camera views from the dorsal display.",
+        },
+        {
+          title: "Multi-Camera Control",
+          description:
+            "Switch feeds, trigger synchronized recording, capture images, and review device and signal status.",
+        },
+        {
+          title: "Professional Audio",
+          description:
+            "Record mission audio, interviews, evidence, and voice notes through the integrated microphone system.",
+        },
+        {
+          title: "GPS Telemetry",
+          description:
+            "Track position, direction, altitude, route history, waypoints, speed, and distance travelled.",
+        },
+      ],
+    },
+    useCases: {
+      kicker: "Operational Applications",
+      title: "Built for",
+      titleAccent: "The Field.",
+      items: [
+        "Military Operations",
+        "Law Enforcement",
+        "Private Security",
+        "Search and Rescue",
+        "Disaster Response",
+        "Emergency Services",
+      ],
+    },
+    cta: {
+      kicker: "KOVERT Early Access",
+      title: "Shape the",
+      titleAccent: "Connected Mission.",
+      description:
+        "Join the TekGlove early access list for KOVERT development updates, operational partnerships, testing opportunities, and future availability.",
     },
   },
   Kursor: {
