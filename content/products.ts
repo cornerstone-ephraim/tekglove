@@ -226,8 +226,8 @@ const ecosystemProductCatalog = [
     accentColor: "kapture",
     accentSource: "#8b5cf6",
     accentAnchor: 600,
-    tagline: "Recovery. Reinvented.",
-    href: null,
+    tagline: "Recovery you can measure.",
+    href: "/product/kapture",
     image: null,
     focus: "ecosystem",
     features: [
@@ -273,8 +273,8 @@ const ecosystemProductCatalog = [
     accentColor: "konnect",
     accentSource: "#14b8a6",
     accentAnchor: 500,
-    tagline: "Connected Hands. Smarter Work.",
-    href: null,
+    tagline: "Your workforce. Connected.",
+    href: "/product/konnect",
     image: null,
     focus: "ecosystem",
     features: [

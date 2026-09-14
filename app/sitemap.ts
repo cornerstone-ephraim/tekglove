@@ -8,6 +8,8 @@ const routes = [
   "/product/kinetix",
   "/product/kovert",
   "/product/kursor",
+  "/product/kapture",
+  "/product/konnect",
   "/waitlist",
 ] as const;
 
