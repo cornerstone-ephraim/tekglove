@@ -105,4 +105,41 @@ export const productFaqs = {
         "Kursor is being developed as a wearable input option that can reduce reliance on a traditional mouse for supported actions. Final compatibility and control options will depend on the connected device and application.",
     },
   ],
-} satisfies Record<"Kradle" | "Kinetix" | "Kovert" | "Kursor", FaqItem[]>;
+  Kapture: [
+    {
+      question: "What is Kapture designed to support?",
+      answer:
+        "Kapture is being developed to support hand recovery through therapeutic stimulation, grip-strength monitoring, movement sensing, and recovery insights.",
+    },
+    {
+      question: "How does the Smart Dorsal Sensor support recovery?",
+      answer:
+        "The KAPTURE Smart Dorsal Sensor is designed to coordinate sensing, therapy, and real-time feedback across the hand, helping users understand their rehabilitation activity and progress.",
+    },
+    {
+      question: "Does Kapture replace professional rehabilitation care?",
+      answer:
+        "No. Kapture is intended to support guided recovery and rehabilitation programmes. It does not replace professional assessment, treatment, or advice.",
+    },
+  ],
+  Konnect: [
+    {
+      question: "Who is Konnect designed for?",
+      answer:
+        "Konnect is being developed for teams in manufacturing, warehousing, construction, distribution, oil and gas, and industrial maintenance.",
+    },
+    {
+      question: "How does Konnect connect workers with equipment?",
+      answer:
+        "Planned capabilities include barcode and RFID interaction, gesture-based controls, digital work instructions, and hands-free communication to connect tasks and physical assets with operational information.",
+    },
+    {
+      question: "What does Konnect do with workflow data?",
+      answer:
+        "Konnect is designed to turn workflow activity into productivity insights and connect that activity with digital twin environments, helping teams understand bottlenecks and improve operational visibility.",
+    },
+  ],
+} satisfies Record<
+  "Kradle" | "Kinetix" | "Kovert" | "Kursor" | "Kapture" | "Konnect",
+  FaqItem[]
+>;

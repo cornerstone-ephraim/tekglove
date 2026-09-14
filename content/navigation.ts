@@ -10,4 +10,6 @@ export const productNavLinks = [
   { href: "/product/kinetix", label: "Kinetix" },
   { href: "/product/kovert", label: "Kovert" },
   { href: "/product/kursor", label: "Kursor" },
+  { href: "/product/kapture", label: "Kapture" },
+  { href: "/product/konnect", label: "Konnect" },
 ];

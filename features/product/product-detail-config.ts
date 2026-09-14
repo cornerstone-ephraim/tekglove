@@ -10,6 +10,7 @@ import type {
   ProductDetailConfig,
   PublishedProductName,
 } from "./product-detail-types";
+import { kaptureConfig, konnectConfig } from "./recovery-workforce-config";
 
 export type {
   ProductDetailConfig,
@@ -18,6 +19,8 @@ export type {
 } from "./product-detail-types";
 
 export const productDetailConfigs = {
+  Kapture: kaptureConfig,
+  Konnect: konnectConfig,
   Kinetix: {
     name: "Kinetix",
     accentColor: "kinetix",
