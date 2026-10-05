@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import Image from "next/image";
+import { WatchSVG } from "@/shared/components/ui/watch-svg";
 
 export default function SplashScreen() {
   const [visible, setVisible] = useState(false);
@@ -70,64 +71,29 @@ export default function SplashScreen() {
             className="mask-[radial-gradient(circle_at_center,black,transparent_68%)] opacity-30"
           />
 
-          <motion.div
-            initial={{
-              transform: reduceMotion ? "translateX(0)" : "translateX(50%)",
-            }}
-            animate={{ transform: "translateX(0)" }}
-            transition={{
-              delay: reduceMotion ? 0 : 0.45,
-              duration: reduceMotion ? 0 : 0.7,
-              ease: [0.23, 1, 0.32, 1],
-            }}
-            className="relative z-10 flex items-center gap-3 sm:gap-5"
-          >
-            <motion.div
-              initial={{
-                opacity: 0,
-                transform: reduceMotion ? "translateX(0)" : "translateX(-50%)",
-              }}
-              animate={{ opacity: 1, transform: "translateX(0)" }}
-              transition={{
-                opacity: { duration: 0.2 },
-                transform: {
-                  delay: reduceMotion ? 0 : 0.45,
-                  duration: reduceMotion ? 0 : 0.7,
-                  ease: [0.23, 1, 0.32, 1],
-                },
-              }}
-              className="relative h-20 w-16 shrink-0 overflow-hidden sm:h-28 sm:w-23"
-            >
-              <Image
-                src="/tekglove_icon.png"
-                alt=""
-                width={180}
-                height={180}
-                preload
-                className="absolute top-1/2 left-1/2 w-32 max-w-none -translate-1/2 mix-blend-screen invert sm:w-45"
-              />
-            </motion.div>
-
-            <div className="overflow-hidden py-2">
+          <div className="relative z-10">
+            <WatchSVG progress={100} reduceMotion={Boolean(reduceMotion)}>
               <motion.div
-                initial={{
-                  opacity: 0,
-                  transform: reduceMotion
-                    ? "translateX(0)"
-                    : "translateX(-100%)",
-                }}
-                animate={{ opacity: 1, transform: "translateX(0)" }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{
-                  delay: reduceMotion ? 0 : 0.45,
-                  duration: reduceMotion ? 0.2 : 0.7,
+                  delay: reduceMotion ? 0 : 0.3,
+                  duration: reduceMotion ? 0.2 : 0.5,
                   ease: [0.23, 1, 0.32, 1],
                 }}
-                className="font-brand text-5xl leading-none font-extrabold tracking-tight whitespace-nowrap text-white sm:text-7xl"
+                className="flex size-full items-center justify-center"
               >
-                Tek<span className="text-orange">Glove</span>
+                <Image
+                  src="/tekglove_icon.webp"
+                  alt=""
+                  width={96}
+                  height={96}
+                  preload
+                  className="size-24 invert"
+                />
               </motion.div>
-            </div>
-          </motion.div>
+            </WatchSVG>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>

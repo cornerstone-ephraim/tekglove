@@ -27,7 +27,7 @@ export function WatchSVG({
         duration: reduceMotion ? 0.2 : 0.7,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="relative flex h-[185px] w-[150px] items-center justify-center"
+      className="relative flex h-46.25 w-37.5 items-center justify-center"
     >
       <svg
         width="150"
@@ -67,7 +67,7 @@ export function WatchSVG({
           width="104"
           height="108"
           rx="26"
-          fill="#111"
+          fill="#000000"
           stroke="#2a2a2a"
           strokeWidth="1.5"
         />
@@ -89,14 +89,14 @@ export function WatchSVG({
           fill="#222"
           stroke="#333"
         />
-        <rect x="16" y="28" width="88" height="92" rx="20" fill="#0a0a0a" />
+        <rect x="16" y="28" width="88" height="92" rx="20" fill="#000000" />
         <rect
           x="16"
           y="28"
           width="88"
           height="92"
           rx="20"
-          fill="rgba(249,115,22,0.06)"
+          fill="#000000"
           opacity={screenOpacity}
         />
 
@@ -171,7 +171,7 @@ export function WatchSVG({
         )}
       </svg>
       {children ? (
-        <div className="absolute top-[35px] left-5 h-[115px] w-[110px] overflow-hidden rounded-[25px]">
+        <div className="absolute top-8.75 left-5 h-28.75 w-27.5 overflow-hidden rounded-[25px]">
           {children}
         </div>
       ) : null}
