@@ -22,12 +22,12 @@ export const platformFaqs: FaqItem[] = [
   {
     question: "Is TekGlove one product or a family of products?",
     answer:
-      "TekGlove is one core platform expressed through six specialised gloves: Kradle, Kinetix, Kursor, Kovert, Kapture, and Konnect. Each product applies the shared platform to a different field.",
+      "TekGlove is one core platform expressed through six specialised gloves: Kradle, Kinetik, Kursor, Kovert, Kapture, and Konnect. Each product applies the shared platform to a different field.",
   },
   {
     question: "Are TekGlove products available now?",
     answer:
-      "TekGlove products are currently in development. Kradle, Kinetix, Kovert, and Kursor are the initial focus products, while the wider six-glove ecosystem continues to evolve.",
+      "TekGlove products are currently in development. Kradle, Kinetik, Kovert, and Kursor are the initial focus products, while the wider six-glove ecosystem continues to evolve.",
   },
   {
     question: "How can I get early access?",
@@ -37,21 +37,21 @@ export const platformFaqs: FaqItem[] = [
 ];
 
 export const productFaqs = {
-  Kinetix: [
+  Kinetik: [
     {
-      question: "Who is Kinetix designed for?",
+      question: "Who is Kinetik designed for?",
       answer:
-        "Kinetix is designed for people who want to understand how they move, from everyday training and fitness to coaching and organised sport. It is not limited to professional athletes.",
+        "Kinetik is designed for people who want to understand how they move, from everyday training and fitness to coaching and organised sport. It is not limited to professional athletes.",
     },
     {
-      question: "What data does Kinetix capture?",
+      question: "What data does Kinetik capture?",
       answer:
-        "Kinetix is being developed to interpret movement, grip, gestures, biometrics, and hand position, turning those signals into useful performance context.",
+        "Kinetik is being developed to interpret movement, grip, gestures, biometrics, and hand position, turning those signals into useful performance context.",
     },
     {
-      question: "Does Kinetix replace a smartwatch?",
+      question: "Does Kinetik replace a smartwatch?",
       answer:
-        "No. Kinetix is centred on the glove and its Smart Dorsal Sensor. Compatible watches, displays, and wireless earbuds may serve as optional accessories within the experience.",
+        "No. Kinetik is centred on the glove and its Smart Dorsal Sensor. Compatible watches, displays, and wireless earbuds may serve as optional accessories within the experience.",
     },
   ],
   Kradle: [
@@ -140,6 +140,6 @@ export const productFaqs = {
     },
   ],
 } satisfies Record<
-  "Kradle" | "Kinetix" | "Kovert" | "Kursor" | "Kapture" | "Konnect",
+  "Kradle" | "Kinetik" | "Kovert" | "Kursor" | "Kapture" | "Konnect",
   FaqItem[]
 >;

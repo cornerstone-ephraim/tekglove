@@ -7,7 +7,7 @@ export const navLinks = [
 
 export const productNavLinks = [
   { href: "/product/kradle", label: "Kradle" },
-  { href: "/product/kinetix", label: "Kinetix" },
+  { href: "/product/kinetik", label: "Kinetik" },
   { href: "/product/kovert", label: "Kovert" },
   { href: "/product/kursor", label: "Kursor" },
   { href: "/product/kapture", label: "Kapture" },

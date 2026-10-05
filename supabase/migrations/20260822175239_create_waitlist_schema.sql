@@ -57,7 +57,7 @@ create table public.waitlist_interests (
   product_slug text not null check (
     product_slug in (
       'kradle',
-      'kinetix',
+      'kinetik',
       'kursor',
       'kovert',
       'kapture',

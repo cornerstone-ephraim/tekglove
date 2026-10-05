@@ -21,12 +21,12 @@ export type {
 export const productDetailConfigs = {
   Kapture: kaptureConfig,
   Konnect: konnectConfig,
-  Kinetix: {
-    name: "Kinetix",
-    accentColor: "kinetix",
+  Kinetik: {
+    name: "Kinetik",
+    accentColor: "kinetik",
     accentSource: "#60a922",
-    mark: "KINETIX™",
-    eyebrow: "KINETIX™ · Flagship",
+    mark: "KINETIK™",
+    eyebrow: "KINETIK™ · Flagship",
     title: "TekGlove",
     titleAccent: "V1",
     subtitle: "Data in the Palm of Your Hand.",
@@ -35,7 +35,7 @@ export const productDetailConfigs = {
     shader: "sensor",
     signalLabel: "Smart Dorsal Sensor",
     signalValue: "Motion · Grip · Gesture · Position",
-    heroVisual: { image: "/images/kinetix-hero.webp", icon: Crosshair },
+    heroVisual: { image: "/images/kinetik-hero.webp", icon: Crosshair },
     specifications: [
       { label: "Core Technology", value: "Smart Dorsal Sensor" },
       { label: "Specialist Module", value: "Performance sensing glove" },
@@ -47,11 +47,11 @@ export const productDetailConfigs = {
         value: "Performance materials · Grip-focused design",
       },
       { label: "Protection", value: "Weather-ready design in development" },
-      { label: "Companion", value: "KINETIX app · AI coaching" },
+      { label: "Companion", value: "KINETIK app · AI coaching" },
     ],
     showcases: [
       {
-        image: "/images/kinetix-sensor-front.webp",
+        image: "/images/kinetik-sensor-front.webp",
         icon: Crosshair,
         kicker: "Left Hand · Shared Interface",
         title: "Smart Interface Glove",
@@ -59,7 +59,7 @@ export const productDetailConfigs = {
           "The Smart Dorsal Sensor captures movement, grip, gestures, biometrics, and hand position while keeping the palm and fingers free to move naturally.",
       },
       {
-        image: "/images/kinetix-biometric-front.webp",
+        image: "/images/kinetik-biometric-front.webp",
         icon: Headphones,
         kicker: "Right Hand · Specialist Module",
         title: "Performance & Accessory Glove",
@@ -72,7 +72,7 @@ export const productDetailConfigs = {
       title: "The Hand Holds",
       titleAccent: "Actionable Data.",
       description:
-        "Every movement, grip, gesture, and physical response contains information. KINETIX captures that information at the hand and transforms it into insight you can use.",
+        "Every movement, grip, gesture, and physical response contains information. KINETIK captures that information at the hand and transforms it into insight you can use.",
       capabilities: [
         {
           title: "Motion Tracking",
@@ -103,11 +103,11 @@ export const productDetailConfigs = {
       items: ["Boxing", "Cycling", "Tennis", "Football", "Golf", "Running"],
     },
     cta: {
-      kicker: "KINETIX Early Access",
+      kicker: "KINETIK Early Access",
       title: "Be First to",
       titleAccent: "Move Smarter.",
       description:
-        "Join the TekGlove early access list for KINETIX development updates, beta opportunities, and product availability.",
+        "Join the TekGlove early access list for KINETIK development updates, beta opportunities, and product availability.",
     },
   },
   Kradle: {

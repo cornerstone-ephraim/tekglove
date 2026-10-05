@@ -1,6 +1,6 @@
 # TekGlove
 
-TekGlove is a wearable hand-data platform built around the Smart Dorsal Sensor. The website introduces a six-product ecosystem, with Kradle, Kinetix, and Kursor as its three current focus products across maternal health, movement and performance, and human-computer interaction.
+TekGlove is a wearable hand-data platform built around the Smart Dorsal Sensor. The website introduces a six-product ecosystem, with Kradle, Kinetik, and Kursor as its three current focus products across maternal health, movement and performance, and human-computer interaction.
 
 ## Technology
 
