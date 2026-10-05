@@ -3,12 +3,12 @@ import ProductPage from "@/features/product/product-page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kinetix Movement and Performance Glove",
+  title: "Kinetik Movement and Performance Glove",
   description:
-    "Explore Kinetix, the TekGlove movement and performance wearable for motion tracking, grip sensing, biometrics, connected accessories, and coaching insight.",
-  path: "/product/kinetix",
+    "Explore Kinetik, the TekGlove movement and performance wearable for motion tracking, grip sensing, biometrics, connected accessories, and coaching insight.",
+  path: "/product/kinetik",
   keywords: [
-    "Kinetix glove",
+    "Kinetik glove",
     "performance tracking glove",
     "sports wearable technology",
     "grip force monitoring",
@@ -16,6 +16,6 @@ export const metadata: Metadata = createPageMetadata({
   ],
 });
 
-export default function KinetixPage() {
-  return <ProductPage productName="Kinetix" />;
+export default function KinetikPage() {
+  return <ProductPage productName="Kinetik" />;
 }

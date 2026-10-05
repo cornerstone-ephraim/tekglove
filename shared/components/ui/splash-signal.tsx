@@ -7,7 +7,7 @@ import { WatchSVG } from "./watch-svg";
 
 const signals = [
   { name: "KRADLE", detail: "MATERNAL SIGNAL", Icon: HeartPulse },
-  { name: "KINETIX", detail: "MOTION LOCK", Icon: Crosshair },
+  { name: "KINETIK", detail: "MOTION LOCK", Icon: Crosshair },
   { name: "KURSOR", detail: "GESTURE READY", Icon: MousePointer2 },
 ] as const;
 

@@ -49,17 +49,17 @@
   --color-kradle-900: oklch(35.97% 0.054 306.79);
   --color-kradle-950: oklch(25.23% 0.0366 306.79);
 
-  --color-kinetix-50: oklch(98.41% 0.0178 134.54);
-  --color-kinetix-100: oklch(96.3% 0.0355 134.54);
-  --color-kinetix-200: oklch(92.07% 0.0675 134.54);
-  --color-kinetix-300: oklch(85.73% 0.1102 134.54);
-  --color-kinetix-400: oklch(76.75% 0.1493 134.54);
-  --color-kinetix-500: oklch(66.18% 0.1777 134.54);
-  --color-kinetix-600: oklch(56.93% 0.1649 134.54);
-  --color-kinetix-700: oklch(48.18% 0.1396 134.54);
-  --color-kinetix-800: oklch(39.9% 0.1156 134.54);
-  --color-kinetix-900: oklch(32.6% 0.0944 134.54);
-  --color-kinetix-950: oklch(22.87% 0.0663 134.54);
+  --color-kinetik-50: oklch(98.41% 0.0178 134.54);
+  --color-kinetik-100: oklch(96.3% 0.0355 134.54);
+  --color-kinetik-200: oklch(92.07% 0.0675 134.54);
+  --color-kinetik-300: oklch(85.73% 0.1102 134.54);
+  --color-kinetik-400: oklch(76.75% 0.1493 134.54);
+  --color-kinetik-500: oklch(66.18% 0.1777 134.54);
+  --color-kinetik-600: oklch(56.93% 0.1649 134.54);
+  --color-kinetik-700: oklch(48.18% 0.1396 134.54);
+  --color-kinetik-800: oklch(39.9% 0.1156 134.54);
+  --color-kinetik-900: oklch(32.6% 0.0944 134.54);
+  --color-kinetik-950: oklch(22.87% 0.0663 134.54);
 
   --color-kursor-50: oklch(98.45% 0.0072 261.34);
   --color-kursor-100: oklch(96.39% 0.017 261.34);
@@ -139,9 +139,9 @@
   --product-accent: var(--color-kradle-500);
 }
 
-.product-accent[data-product-accent="kinetix"] {
-  --orange: var(--color-kinetix-500);
-  --product-accent: var(--color-kinetix-500);
+.product-accent[data-product-accent="kinetik"] {
+  --orange: var(--color-kinetik-500);
+  --product-accent: var(--color-kinetik-500);
 }
 
 .product-accent[data-product-accent="kursor"] {

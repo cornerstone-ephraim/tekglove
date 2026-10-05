@@ -1,4 +1,4 @@
-import { createPageMetadata } from "@/shared/seo/metadata";
+  import { createPageMetadata } from "@/shared/seo/metadata";
 
 export const metadata = createPageMetadata({
   title: "The Smart Glove, Reinvented.",

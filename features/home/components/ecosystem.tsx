@@ -1,6 +1,6 @@
 "use client";
 
-import { ecosystemProducts } from "@/content/products";
+import { ecosystemProducts, type ProductAccent } from "@/content/products";
 import {
   alternatingCardReveal,
   revealViewport,
@@ -14,18 +14,19 @@ import {
   MousePointer2,
   Shield,
   Zap,
+  type LucideIcon,
 } from "lucide-react";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { ButtonLink } from "@/shared/components/ui/button";
 
 const icons = {
-  Kinetix: Crosshair,
-  Kradle: Activity,
-  Kursor: MousePointer2,
-  Kovert: Shield,
-  Kapture: Zap,
-  Konnect: Cog,
-} as const;
+  kinetik: Crosshair,
+  kradle: Activity,
+  kursor: MousePointer2,
+  kovert: Shield,
+  kapture: Zap,
+  konnect: Cog,
+} satisfies Record<ProductAccent, LucideIcon>;
 
 export function Ecosystem() {
   const reduceMotion = useReducedMotion();
@@ -74,8 +75,7 @@ export function Ecosystem() {
           className="grid gap-5 lg:grid-cols-3"
         >
           {ecosystemProducts.map((product, index) => {
-            const productName = product.name as keyof typeof icons;
-            const Icon = icons[productName];
+            const Icon = icons[product.slug];
             return (
               <motion.article
                 key={product.name}
@@ -85,7 +85,7 @@ export function Ecosystem() {
                 className="surface-panel product-accent group relative flex min-h-full flex-col overflow-hidden p-8 transition-colors duration-500 hover:bg-surface-raised md:p-10"
               >
                 <div className="relative z-10 mb-10 flex items-start">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange/12 text-orange ring-1 ring-orange/25 ring-inset">
+                  <div className="flex size-12 items-center justify-center rounded-full bg-orange/12 text-orange ring-1 ring-orange/25 ring-inset">
                     <Icon size={21} strokeWidth={1.5} />
                   </div>
                 </div>

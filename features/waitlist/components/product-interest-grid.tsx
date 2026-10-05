@@ -11,10 +11,10 @@ const accentClasses: Record<
     selected: "border-kradle-500/70 bg-kradle-500/10",
     glow: "shadow-[0_0_18px_var(--color-kradle-500)]",
   },
-  kinetix: {
-    dot: "bg-kinetix-500",
-    selected: "border-kinetix-500/70 bg-kinetix-500/10",
-    glow: "shadow-[0_0_18px_var(--color-kinetix-500)]",
+  kinetik: {
+    dot: "bg-kinetik-500",
+    selected: "border-kinetik-500/70 bg-kinetik-500/10",
+    glow: "shadow-[0_0_18px_var(--color-kinetik-500)]",
   },
   kursor: {
     dot: "bg-kursor-600",

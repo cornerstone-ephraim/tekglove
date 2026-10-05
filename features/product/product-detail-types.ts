@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import type { ProductAccent } from "@/content/products";
 
 export type PublishedProductName =
-  "Kradle" | "Kinetix" | "Kovert" | "Kursor" | "Kapture" | "Konnect";
+  "Kradle" | "Kinetik" | "Kovert" | "Kursor" | "Kapture" | "Konnect";
 
 export type ProductVisual = {
   image?: string;

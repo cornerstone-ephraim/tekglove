@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
-import { SplashSignal } from "@/shared/components/ui/splash-signal";
+import Image from "next/image";
 
 export default function SplashScreen() {
   const [visible, setVisible] = useState(false);
@@ -29,7 +29,7 @@ export default function SplashScreen() {
 
     const previousOverflow = document.body.style.overflow;
     previousOverflowRef.current = previousOverflow;
-    const duration = reduceMotion ? 450 : 3200;
+    const duration = reduceMotion ? 450 : 2000;
 
     setVisible(true);
     document.body.style.overflow = "hidden";
@@ -70,29 +70,64 @@ export default function SplashScreen() {
             className="mask-[radial-gradient(circle_at_center,black,transparent_68%)] opacity-30"
           />
 
-          <div className="relative z-10 flex flex-col items-center gap-8">
-            <SplashSignal />
-
+          <motion.div
+            initial={{
+              transform: reduceMotion ? "translateX(0)" : "translateX(50%)",
+            }}
+            animate={{ transform: "translateX(0)" }}
+            transition={{
+              delay: reduceMotion ? 0 : 0.45,
+              duration: reduceMotion ? 0 : 0.7,
+              ease: [0.23, 1, 0.32, 1],
+            }}
+            className="relative z-10 flex items-center gap-3 sm:gap-5"
+          >
             <motion.div
               initial={{
                 opacity: 0,
-                transform: reduceMotion ? "translateY(0)" : "translateY(8px)",
+                transform: reduceMotion ? "translateX(0)" : "translateX(-50%)",
               }}
-              animate={{ opacity: 1, transform: "translateY(0)" }}
+              animate={{ opacity: 1, transform: "translateX(0)" }}
               transition={{
-                delay: reduceMotion ? 0 : 0.3,
-                duration: reduceMotion ? 0.2 : 0.6,
+                opacity: { duration: 0.2 },
+                transform: {
+                  delay: reduceMotion ? 0 : 0.45,
+                  duration: reduceMotion ? 0 : 0.7,
+                  ease: [0.23, 1, 0.32, 1],
+                },
               }}
-              className="text-center"
+              className="relative h-20 w-16 shrink-0 overflow-hidden sm:h-28 sm:w-23"
             >
-              <div className="font-brand text-[1.65rem] font-extrabold tracking-[0.2em] text-white uppercase sm:text-[1.8rem]">
-                Tek<span className="text-orange">Glove</span>
-              </div>
-              <p className="mt-2 font-mono text-[0.55rem] font-medium tracking-[0.14em] text-white/60">
-                ONE PLATFORM · MULTIPLE SIGNALS
-              </p>
+              <Image
+                src="/tekglove_icon.png"
+                alt=""
+                width={180}
+                height={180}
+                preload
+                className="absolute top-1/2 left-1/2 w-32 max-w-none -translate-1/2 mix-blend-screen invert sm:w-45"
+              />
             </motion.div>
-          </div>
+
+            <div className="overflow-hidden py-2">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  transform: reduceMotion
+                    ? "translateX(0)"
+                    : "translateX(-100%)",
+                }}
+                animate={{ opacity: 1, transform: "translateX(0)" }}
+                transition={{
+                  delay: reduceMotion ? 0 : 0.45,
+                  duration: reduceMotion ? 0.2 : 0.7,
+                  ease: [0.23, 1, 0.32, 1],
+                }}
+                className="font-brand text-5xl leading-none font-extrabold tracking-tight whitespace-nowrap text-white sm:text-7xl"
+              >
+                Tek<span className="text-orange">Glove</span>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

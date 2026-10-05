@@ -36,13 +36,13 @@ export function StickyFeatures() {
     <section className="border-b border-white/8 py-20 md:py-28">
       <div className="mb-14 grid gap-6 px-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:px-12">
         <div>
-          <p className="section-kicker mb-5">KINETIX™ · TekGlove V1</p>
+          <p className="section-kicker mb-5">KINETIK™ · TekGlove V1</p>
           <h2 className="display-title max-w-[12ch] text-[clamp(2.75rem,6vw,5.5rem)] text-white">
             The flagship, built around the hand.
           </h2>
         </div>
         <p className="copy-secondary max-w-[52ch] text-[0.95rem] leading-[1.85] md:pb-1">
-          KINETIX captures movement, grip, gestures, biometrics, and hand
+          KINETIK captures movement, grip, gestures, biometrics, and hand
           position without interrupting natural movement, then turns each
           session into feedback people can understand and use.
         </p>

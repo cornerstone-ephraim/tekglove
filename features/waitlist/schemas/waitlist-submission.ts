@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const waitlistProductSlugs = [
   "kradle",
-  "kinetix",
+  "kinetik",
   "kursor",
   "kovert",
   "kapture",

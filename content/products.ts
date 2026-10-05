@@ -1,5 +1,5 @@
 export type ProductAccent =
-  "kradle" | "kinetix" | "kursor" | "kovert" | "kapture" | "konnect";
+  "kradle" | "kinetik" | "kursor" | "kovert" | "kapture" | "konnect";
 
 export type EcosystemProduct = {
   id: string;
@@ -74,16 +74,16 @@ const ecosystemProductCatalog = [
   },
   {
     id: "02",
-    slug: "kinetix",
-    name: "Kinetix",
-    mark: "KINETIX™",
+    slug: "kinetik",
+    name: "kinetik",
+    mark: "KINETIK™",
     category: "Movement & Performance",
     purpose: "Movement, fitness, and performance insight",
     accent: "Performance",
-    accentColor: "kinetix",
+    accentColor: "kinetik",
     accentSource: "#60a922",
     accentAnchor: 500,
-    href: "/product/kinetix",
+    href: "/product/kinetik",
     image: null,
     focus: "primary",
     features: [
@@ -316,7 +316,7 @@ const ecosystemProductCatalog = [
 
 const ecosystemProductOrder: ProductAccent[] = [
   "kradle",
-  "kinetix",
+  "kinetik",
   "kovert",
   "kursor",
   "kapture",
