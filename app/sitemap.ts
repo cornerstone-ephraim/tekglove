@@ -4,6 +4,7 @@ import { site } from "@/content/site";
 const routes = [
   "",
   "/about",
+  "/knksports",
   "/product/kradle",
   "/product/kinetik",
   "/product/kovert",

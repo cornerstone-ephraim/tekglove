@@ -2,6 +2,7 @@ export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/product", label: "Products" },
+  { href: "/knksports", label: "KNK Sports" },
   { href: "/waitlist", label: "Get Early Access" },
 ];
 
