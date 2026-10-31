@@ -5,6 +5,8 @@ import Image from "next/image";
 import { knkSports } from "@/content/knksports";
 import { ButtonLink } from "@/shared/components/ui/button";
 import { ConnectedSystem } from "./components/connected-system";
+import { ActivityModes } from "./components/activity-modes";
+import { KradleSensor } from "./components/kradle-sensor";
 
 export default function KnkSportsPage() {
   useLayoutEffect(() => {
@@ -81,7 +83,7 @@ export default function KnkSportsPage() {
         className="scroll-mt-24 border-b border-white/10 px-6 py-24 md:px-12 md:py-32"
       >
         <div className="mx-auto max-w-375">
-          <p className="section-kicker mb-5">Your Sport</p>
+          <p className="section-kicker mb-5">Athlete Activities</p>
           <div className="mb-14 grid gap-6 lg:grid-cols-2 lg:items-end">
             <h2 className="display-title text-5xl text-white md:text-7xl">
               Different sports.
@@ -89,8 +91,9 @@ export default function KnkSportsPage() {
               <span className="text-orange">One athlete-first approach.</span>
             </h2>
             <p className="copy-secondary max-w-xl text-base leading-relaxed lg:pl-10">
-              These are the sports shaping our direction. Each asks something
-              different of your hands, your equipment and your training.
+              Tennis, boxing, golf, American football, soccer and cycling are
+              the athlete activities shaping KNK Sports. These activities sit
+              alongside the named modes in the modular system.
             </p>
           </div>
           <div className="grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
@@ -162,7 +165,9 @@ export default function KnkSportsPage() {
         </div>
       </section>
 
+      <ActivityModes />
       <ConnectedSystem />
+      <KradleSensor />
 
       <section className="px-6 py-24 text-center md:px-12 md:py-32">
         <p className="section-kicker mb-5">Be Part of What Comes Next</p>
