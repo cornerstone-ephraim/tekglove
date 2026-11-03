@@ -1,19 +1,21 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { features } from "@/content/home";
 import {
   alternatingCardReveal,
   revealViewport,
   staggeredCardGroup,
 } from "@/shared/motion/card-reveal";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { ButtonLink } from "@/shared/components/ui/button";
 
 export function Features() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="border-b border-white/8 py-28 md:py-36">
+    <section className="border-b border-primary/8 py-28 md:py-36">
       <div className="w-full px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
@@ -26,7 +28,7 @@ export function Features() {
           className="mb-14 max-w-4xl"
         >
           <p className="section-kicker mb-5">Built Around the Hand</p>
-          <h2 className="display-title text-[clamp(2.75rem,6vw,5.5rem)] text-white">
+          <h2 className="display-title text-[clamp(2.75rem,6vw,5.5rem)] text-primary">
             The Body&apos;s Natural Interface.
           </h2>
         </motion.div>
@@ -47,7 +49,7 @@ export function Features() {
               className="surface-panel group relative overflow-hidden p-8 md:p-9"
             >
               <div className="pointer-events-none absolute right-0 bottom-0 left-0 h-32 bg-linear-to-t from-orange/8 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <h3 className="mb-3 font-heading text-[1.25rem] font-semibold tracking-[-0.025em] text-white">
+              <h3 className="mb-3 font-heading text-[1.25rem] font-semibold tracking-[-0.025em] text-primary">
                 {f.title}
               </h3>
               <p className="copy-secondary font-sans text-[0.9rem] leading-[1.75]">
@@ -65,7 +67,7 @@ export function Features() {
             duration: reduceMotion ? 0.2 : 0.5,
             ease: [0.23, 1, 0.32, 1],
           }}
-          className="mt-10 flex flex-col gap-5 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between"
+          className="mt-10 flex flex-col gap-5 border-t border-primary/10 pt-8 sm:flex-row sm:items-center sm:justify-between"
         >
           <p className="copy-secondary max-w-[52ch] text-sm leading-[1.75]">
             Discover how a compact sports sensor evolved into a platform built

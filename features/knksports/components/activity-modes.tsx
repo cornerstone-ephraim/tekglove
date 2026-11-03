@@ -2,11 +2,11 @@ import { knkModes } from "@/content/knksports";
 
 export function ActivityModes() {
   return (
-    <section className="border-b border-white/10 px-6 py-24 md:px-12 md:py-32">
+    <section className="border-b border-primary/10 px-6 py-24 md:px-12 md:py-32">
       <div className="mx-auto max-w-375">
         <p className="section-kicker mb-5">KNK Sports Modes</p>
         <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-end">
-          <h2 className="display-title text-5xl text-white md:text-7xl">
+          <h2 className="display-title text-5xl text-primary md:text-7xl">
             One platform.
             <br />
             <span className="text-orange">Different modes.</span>
@@ -26,7 +26,7 @@ export function ActivityModes() {
           {knkModes.map((mode) => (
             <article key={mode.name} className="surface-panel p-7 md:p-8">
               <p className="mb-3 text-sm text-orange">{mode.focus}</p>
-              <h3 className="font-brand text-3xl font-bold text-white">
+              <h3 className="font-brand text-3xl font-bold text-primary">
                 {mode.name}
               </h3>
               <ul className="copy-secondary mt-6 space-y-3 text-sm leading-relaxed">

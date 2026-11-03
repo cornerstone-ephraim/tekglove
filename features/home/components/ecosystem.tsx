@@ -1,12 +1,14 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { ecosystemProducts, type ProductAccent } from "@/content/products";
 import {
   alternatingCardReveal,
   revealViewport,
   staggeredCardGroup,
 } from "@/shared/motion/card-reveal";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import {
   Activity,
   Cog,
@@ -34,7 +36,7 @@ export function Ecosystem() {
   return (
     <section
       id="ecosystem"
-      className="relative overflow-hidden border-b border-white/8 py-28 md:py-36"
+      className="relative overflow-hidden border-b border-primary/8 py-28 md:py-36"
     >
       <ShaderBackdrop
         variant="ecosystem"
@@ -53,7 +55,7 @@ export function Ecosystem() {
         >
           <div>
             <p className="section-kicker mb-5">The TekGlove Ecosystem</p>
-            <h2 className="display-title max-w-4xl text-[clamp(3rem,7vw,6rem)] text-white">
+            <h2 className="display-title max-w-4xl text-[clamp(3rem,7vw,6rem)] text-primary">
               One Platform.
               <br />
               <span className="text-orange">Endless Possibilities.</span>
@@ -94,7 +96,7 @@ export function Ecosystem() {
                   <p className="mb-3 font-mono text-xs tracking-[0.08em] text-orange">
                     {product.accent}
                   </p>
-                  <h3 className="font-brand text-4xl font-black tracking-[0.01em] text-white">
+                  <h3 className="font-brand text-4xl font-black tracking-[0.01em] text-primary">
                     {product.mark}
                   </h3>
                   <p className="copy-secondary mt-2 min-h-10 font-sans text-sm leading-relaxed">
@@ -104,14 +106,14 @@ export function Ecosystem() {
 
                 <div className="relative z-10 my-8 h-px bg-white/10" />
 
-                <p className="relative z-10 mb-4 font-mono text-xs tracking-[0.08em] text-white/60">
+                <p className="relative z-10 mb-4 font-mono text-xs tracking-[0.08em] text-primary/60">
                   Key capabilities
                 </p>
                 <ul className="relative z-10 mb-9 space-y-2.5">
                   {product.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex gap-3 font-sans text-sm leading-relaxed text-white/78"
+                      className="flex gap-3 font-sans text-sm leading-relaxed text-primary/78"
                     >
                       <span className="mt-[0.55em] h-1 w-1 shrink-0 bg-orange" />
                       {feature}
@@ -120,14 +122,14 @@ export function Ecosystem() {
                 </ul>
 
                 <div className="relative z-10 mt-auto">
-                  <p className="mb-3 font-mono text-xs tracking-[0.08em] text-white/60">
+                  <p className="mb-3 font-mono text-xs tracking-[0.08em] text-primary/60">
                     Built for
                   </p>
                   <p className="copy-secondary mb-8 font-sans text-sm leading-[1.75]">
                     {product.users.join(" · ")}
                   </p>
                   <div className="border-l-2 border-orange pl-4">
-                    <p className="font-sans text-sm leading-relaxed font-medium text-white/85">
+                    <p className="font-sans text-sm leading-relaxed font-medium text-primary/85">
                       {product.value}
                     </p>
                   </div>

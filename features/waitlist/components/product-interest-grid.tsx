@@ -54,19 +54,19 @@ export function ProductInterestGrid({
       aria-describedby={error ? "product-interest-error" : undefined}
       aria-invalid={Boolean(error)}
     >
-      <legend className="mb-2 text-sm font-medium text-white">
+      <legend className="mb-2 text-sm font-medium text-primary">
         Which gloves are you interested in?{" "}
         <span className="text-orange" aria-hidden="true">
           *
         </span>
         <span className="sr-only">Required</span>
         {error ? (
-          <span aria-hidden="true" className="ml-2 font-normal text-red-400">
+          <span aria-hidden="true" className="ml-2 font-normal text-red-700">
             ({error})
           </span>
         ) : null}
       </legend>
-      <p className="mb-4 text-sm leading-relaxed text-white/45">
+      <p className="mb-4 text-sm leading-relaxed text-primary/45">
         Choose as many as you like.
       </p>
 
@@ -83,7 +83,7 @@ export function ProductInterestGrid({
                   ? accent.selected
                   : error
                     ? "border-red-400/70 bg-red-400/5 hover:border-red-400"
-                    : "border-white/10 bg-white/3 hover:border-white/20 hover:bg-white/5"
+                    : "border-primary/10 bg-white/3 hover:border-primary/20 hover:bg-primary/5"
               }`}
             >
               <input
@@ -101,10 +101,10 @@ export function ProductInterestGrid({
                 className={`mt-1 h-2 w-2 shrink-0 rounded-full ${accent.dot} ${isSelected ? accent.glow : "opacity-65"}`}
               />
               <span className="min-w-0 flex-1">
-                <span className="block text-sm font-semibold text-white">
+                <span className="block text-sm font-semibold text-primary">
                   {product.name}
                 </span>
-                <span className="mt-1 block text-xs leading-relaxed text-white/45">
+                <span className="mt-1 block text-xs leading-relaxed text-primary/45">
                   {product.category}
                 </span>
               </span>
@@ -112,8 +112,8 @@ export function ProductInterestGrid({
                 aria-hidden="true"
                 className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-colors ${
                   isSelected
-                    ? "border-white bg-white text-black"
-                    : "border-white/20 text-transparent"
+                    ? "border-primary bg-white text-black"
+                    : "border-primary/20 text-transparent"
                 }`}
               >
                 <BsCheck2 className="text-sm" />

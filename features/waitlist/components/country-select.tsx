@@ -17,7 +17,7 @@ export function CountrySelect({ value, onChangeAction }: CountrySelectProps) {
       <label
         id={select.labelId}
         htmlFor="waitlist-country"
-        className="mb-2 block text-sm font-medium text-white"
+        className="mb-2 block text-sm font-medium text-primary"
       >
         Country
       </label>
@@ -61,7 +61,7 @@ export function CountrySelect({ value, onChangeAction }: CountrySelectProps) {
               select.closeAndRestore();
             }
           }}
-          className="min-h-13 w-full rounded-xl border border-white/10 bg-white/4 px-4 pr-11 text-base text-white transition-[border-color,background-color,box-shadow] outline-none placeholder:text-white/25 hover:border-white/20 focus:border-orange/70 focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]"
+          className="min-h-13 w-full rounded-xl border border-primary/10 bg-white/4 px-4 pr-11 text-base text-primary transition-[border-color,background-color,box-shadow] outline-none placeholder:text-copy-muted hover:border-primary/20 focus:border-orange/70 focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]"
         />
         <button
           type="button"
@@ -71,7 +71,7 @@ export function CountrySelect({ value, onChangeAction }: CountrySelectProps) {
             select.setOpen(!select.open);
             select.inputRef.current?.focus();
           }}
-          className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-white/50"
+          className="absolute inset-y-0 right-0 flex w-11 items-center justify-center text-primary/50"
         >
           <BsChevronDown
             aria-hidden="true"
@@ -85,7 +85,7 @@ export function CountrySelect({ value, onChangeAction }: CountrySelectProps) {
           id={select.listboxId}
           role="listbox"
           aria-labelledby={select.labelId}
-          className="absolute z-30 mt-2 max-h-68 w-full overflow-y-auto rounded-xl border border-white/12 bg-[#111113]/96 p-1.5 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-xl"
+          className="absolute z-30 mt-2 max-h-68 w-full overflow-y-auto rounded-xl border border-primary/12 bg-surface-raised p-1.5 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-xl"
         >
           {select.filteredCountries.length > 0 ? (
             select.filteredCountries.map((country, index) => {
@@ -107,13 +107,13 @@ export function CountrySelect({ value, onChangeAction }: CountrySelectProps) {
                     selected
                       ? "bg-orange/10 text-orange"
                       : active
-                        ? "bg-white/7 text-white"
-                        : "text-white/70 hover:bg-white/7"
+                        ? "bg-white/7 text-primary"
+                        : "text-primary/70 hover:bg-white/7"
                   }`}
                 >
                   <span>{country.name}</span>
                   <span className="flex items-center gap-3">
-                    <span className="font-mono text-[0.65rem] text-white/30">
+                    <span className="font-mono text-[0.65rem] text-primary/30">
                       {country.code}
                     </span>
                     <BsCheck2
@@ -127,7 +127,7 @@ export function CountrySelect({ value, onChangeAction }: CountrySelectProps) {
               );
             })
           ) : (
-            <p className="px-3.5 py-4 text-sm text-white/45">
+            <p className="px-3.5 py-4 text-sm text-primary/45">
               No countries found.
             </p>
           )}

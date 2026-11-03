@@ -50,11 +50,11 @@ export function WaitlistConfirmationPage({
         variant="waitlist"
         className="mask-[radial-gradient(circle_at_center,black,transparent_68%)] opacity-30"
       />
-      <div className="relative z-10 w-full max-w-176 rounded-4xl border border-white/10 bg-black/55 p-8 backdrop-blur-xl sm:p-12 lg:p-16">
+      <div className="relative z-10 w-full max-w-176 rounded-4xl border border-primary/10 bg-surface-raised/80 p-8 backdrop-blur-xl sm:p-12 lg:p-16">
         <p className="section-kicker mb-6">
           {state?.eyebrow ?? "Confirm your email"}
         </p>
-        <h1 className="max-w-[12ch] font-heading text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.98] font-semibold tracking-[-0.055em] text-white">
+        <h1 className="max-w-[12ch] font-heading text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.98] font-semibold tracking-[-0.055em] text-primary">
           {state?.heading ?? "One last step."}
         </h1>
         <p className="copy-secondary mt-7 max-w-[52ch] text-base leading-7 sm:text-lg">

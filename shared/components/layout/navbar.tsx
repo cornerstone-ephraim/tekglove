@@ -1,5 +1,7 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -7,7 +9,6 @@ import {
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
-  useReducedMotion,
 } from "motion/react";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/content/navigation";
@@ -19,7 +20,6 @@ import {
 
 export default function Navbar() {
   const pathname = usePathname();
-  const [hidden, setHidden] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const reduceMotion = useReducedMotion();
@@ -41,32 +41,22 @@ export default function Navbar() {
   }, [open]);
 
   useEffect(() => {
-    setHidden(false);
     setOpen(false);
   }, [pathname]);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const prev = scrollY.getPrevious() ?? 0;
     setScrolled(latest > 20);
-    if (latest > prev && latest > 80 && !open) setHidden(true);
-    else setHidden(false);
   });
 
   const close = () => setOpen(false);
 
   return (
     <>
-      <motion.nav
-        initial={{ y: 0, opacity: 0 }}
-        animate={{ y: reduceMotion ? 0 : hidden ? "-100%" : 0, opacity: 1 }}
-        transition={{
-          duration: reduceMotion ? 0.2 : 0.24,
-          ease: [0.23, 1, 0.32, 1],
-        }}
-        className={`fixed top-0 right-0 left-0 z-50 flex h-16 items-center justify-between px-6 md:px-12 ${
+      <nav
+        className={`fixed top-3 right-3 left-3 z-50 flex h-16 items-center justify-between rounded-2xl border border-primary/10 px-6 md:right-12 md:left-12 lg:right-20 lg:left-20 ${
           scrolled || open
-            ? "bg-black/72 shadow-[0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-2xl"
-            : "border-b-0 bg-transparent"
+            ? "bg-bg/95 shadow-sm backdrop-blur-2xl"
+            : "bg-bg/90 backdrop-blur-xl"
         }`}
         style={{
           WebkitBackdropFilter: scrolled || open ? "blur(12px)" : "none",
@@ -74,13 +64,13 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" onClick={close} className="no-underline">
-          <span className="font-brand text-[1.1rem] font-black tracking-[0.15em] text-white uppercase">
+          <span className="font-brand text-[1.1rem] font-black tracking-[0.15em] text-primary uppercase">
             Tek<span className="text-orange">Glove</span>
           </span>
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden list-none items-center gap-8 md:flex">
+        <ul className="hidden list-none items-center gap-4 lg:flex lg:gap-8">
           {navLinks.slice(0, -1).map(({ href, label }) => {
             const active = pathname === href;
 
@@ -100,7 +90,9 @@ export default function Navbar() {
                 <Link
                   href={href}
                   className={`inline-flex items-center font-sans text-[0.82rem] leading-normal font-medium tracking-[-0.01em] normal-case no-underline transition-colors duration-200 ${
-                    active ? "text-orange" : "text-white/70 hover:text-white"
+                    active
+                      ? "text-orange"
+                      : "text-primary/70 hover:text-primary"
                   }`}
                 >
                   {label}
@@ -111,7 +103,7 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <ButtonLink href="/waitlist" size="sm">
             Get Early Access
           </ButtonLink>
@@ -120,26 +112,27 @@ export default function Navbar() {
         {/* Mobile: hamburger */}
         <button
           onClick={() => setOpen(!open)}
-          className="pressable -mr-2 flex flex-col justify-center gap-1.25 p-2 md:hidden"
-          aria-label="Toggle menu"
+          className="pressable -mr-2 flex flex-col justify-center gap-1.25 p-2 lg:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
         >
           <motion.span
             animate={{ rotate: open ? 45 : 0, y: open ? 7 : 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.24 }}
-            className="block h-px w-6 origin-center bg-white"
+            className="block h-px w-6 origin-center bg-primary"
           />
           <motion.span
             animate={{ opacity: open ? 0 : 1, scaleX: open ? 0 : 1 }}
             transition={{ duration: reduceMotion ? 0 : 0.2 }}
-            className="block h-px w-6 origin-center bg-white"
+            className="block h-px w-6 origin-center bg-primary"
           />
           <motion.span
             animate={{ rotate: open ? -45 : 0, y: open ? -7 : 0 }}
             transition={{ duration: reduceMotion ? 0 : 0.24 }}
-            className="block h-px w-6 origin-center bg-white"
+            className="block h-px w-6 origin-center bg-primary"
           />
         </button>
-      </motion.nav>
+      </nav>
 
       {/* Mobile menu overlay */}
       <AnimatePresence>
@@ -152,7 +145,7 @@ export default function Navbar() {
               duration: reduceMotion ? 0.2 : 0.24,
               ease: [0.23, 1, 0.32, 1],
             }}
-            className="fixed inset-0 z-40 flex flex-col bg-black/92 pt-16 backdrop-blur-[28px] md:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-bg/98 pt-16 backdrop-blur-[28px] lg:hidden"
             style={{ WebkitBackdropFilter: "blur(20px)" }}
           >
             {/* Nav links */}
@@ -170,7 +163,7 @@ export default function Navbar() {
                       delay: reduceMotion ? 0 : i * 0.05,
                       ease: [0.23, 1, 0.32, 1],
                     }}
-                    className="border-b border-white/5"
+                    className="border-b border-primary/5"
                   >
                     {href === "/product" ? (
                       <MobileProductMenu
@@ -186,7 +179,7 @@ export default function Navbar() {
                       >
                         <span
                           className={`font-heading text-[clamp(2rem,8vw,3rem)] leading-none font-semibold tracking-[-0.04em] normal-case transition-colors duration-200 ${
-                            active ? "text-orange" : "text-white/85"
+                            active ? "text-orange" : "text-primary/85"
                           }`}
                         >
                           {label}
@@ -211,7 +204,7 @@ export default function Navbar() {
               }}
               className="flex flex-col gap-4 px-6 pt-8 pb-12"
             >
-              <p className="text-center font-mono text-xs tracking-[0.08em] text-white/55 normal-case">
+              <p className="text-center font-mono text-xs tracking-[0.08em] text-primary/55 normal-case">
                 tekglove.co.uk
               </p>
             </motion.div>

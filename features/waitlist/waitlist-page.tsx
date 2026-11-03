@@ -1,7 +1,9 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { WaitlistForm } from "./components/waitlist-form";
 import { WaitlistSuccess } from "./components/waitlist-success";
@@ -26,7 +28,7 @@ export default function WaitlistPage() {
           className="mb-12 max-w-225 sm:mb-16"
         >
           <p className="section-kicker mb-6">Early access</p>
-          <h1 className="display-title max-w-[12ch] text-[clamp(3.25rem,7vw,7rem)] text-white">
+          <h1 className="display-title max-w-[12ch] text-[clamp(3.25rem,7vw,7rem)] text-primary">
             Be part of what comes next.
           </h1>
           <p className="copy-secondary mt-8 max-w-[48ch] text-base leading-[1.75] sm:text-lg">
@@ -34,9 +36,9 @@ export default function WaitlistPage() {
             opportunities, and first access to the gloves that matter to you.
           </p>
 
-          <div className="mt-10 flex max-w-160 items-center gap-4 border-t border-white/10 pt-6">
+          <div className="mt-10 flex max-w-160 items-center gap-4 border-t border-primary/10 pt-6">
             <span className="h-2 w-2 rounded-full bg-orange shadow-[0_0_18px_var(--orange)]" />
-            <p className="font-mono text-xs tracking-[0.08em] text-white/55">
+            <p className="font-mono text-xs tracking-[0.08em] text-primary/55">
               One platform. Six connected gloves.
             </p>
           </div>

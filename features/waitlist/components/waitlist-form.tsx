@@ -1,6 +1,8 @@
 "use client";
 
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { AnimatePresence, motion } from "motion/react";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { ecosystemProducts } from "@/content/products";
 import { Button } from "@/shared/components/ui/button";
@@ -15,7 +17,7 @@ import { CustomSelect } from "./custom-select";
 import { ProductInterestGrid } from "./product-interest-grid";
 
 const fieldClassName =
-  "min-h-13 w-full rounded-xl border border-white/10 bg-white/4 px-4 text-base text-white outline-none transition-[border-color,background-color,box-shadow] placeholder:text-white/25 hover:border-white/20 focus:border-orange/70 focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]";
+  "min-h-13 w-full rounded-xl border border-primary/10 bg-white/4 px-4 text-base text-primary outline-none transition-[border-color,background-color,box-shadow] placeholder:text-copy-muted hover:border-primary/20 focus:border-orange/70 focus:bg-white/6 focus:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]";
 
 function RequiredMark() {
   return (
@@ -31,7 +33,7 @@ function RequiredMark() {
 
 function FieldError({ error }: { error?: string }) {
   return error ? (
-    <span aria-hidden="true" className="ml-2 font-normal text-red-400">
+    <span aria-hidden="true" className="ml-2 font-normal text-red-700">
       ({error})
     </span>
   ) : null;
@@ -65,16 +67,16 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
 
   return (
     <div>
-      <div className="mb-7 flex items-end justify-between gap-4 border-b border-white/10 pb-5">
+      <div className="mb-7 flex items-end justify-between gap-4 border-b border-primary/10 pb-5">
         <div>
           <p className="font-mono text-[0.7rem] tracking-[0.12em] text-orange">
             {waitlistStepContent[form.step].label}
           </p>
-          <p className="mt-2 text-sm text-white/45">
+          <p className="mt-2 text-sm text-primary/45">
             {waitlistStepContent[form.step].description}
           </p>
         </div>
-        <p className="font-mono text-xs text-white/40">{form.step} of 3</p>
+        <p className="font-mono text-xs text-copy-muted">{form.step} of 3</p>
       </div>
 
       <div className="mb-8 grid grid-cols-3 gap-2" aria-hidden="true">
@@ -98,7 +100,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
           >
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-white">
+                <span className="mb-2 block text-sm font-medium text-primary">
                   First name
                   <RequiredMark />
                   <FieldError error={form.detailErrors.firstName} />
@@ -127,7 +129,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
                 ) : null}
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-white">
+                <span className="mb-2 block text-sm font-medium text-primary">
                   Last name
                   <RequiredMark />
                   <FieldError error={form.detailErrors.lastName} />
@@ -158,7 +160,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             </div>
 
             <label className="block">
-              <span className="mb-2 block text-sm font-medium text-white">
+              <span className="mb-2 block text-sm font-medium text-primary">
                 Email address
                 <RequiredMark />
                 <FieldError error={form.detailErrors.email} />
@@ -186,10 +188,10 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             </label>
 
             <label
-              className={`flex cursor-pointer items-start gap-3 rounded-xl border bg-black/20 p-4 transition-colors ${
+              className={`flex cursor-pointer items-start gap-3 rounded-xl border bg-surface-raised/80 p-4 transition-colors ${
                 form.detailErrors.marketingConsent
                   ? "border-red-400/70"
-                  : "border-white/8"
+                  : "border-primary/8"
               }`}
             >
               <input
@@ -207,7 +209,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
                 }
                 className="mt-0.5 h-4 w-4 shrink-0 accent-orange"
               />
-              <span className="text-xs leading-relaxed text-white/55">
+              <span className="text-xs leading-relaxed text-primary/55">
                 I agree to receive TekGlove development updates and early access
                 invitations. I can unsubscribe at any time.
                 <RequiredMark />
@@ -221,7 +223,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             </label>
 
             <div className="flex flex-col-reverse items-start justify-between gap-4 pt-1 sm:flex-row sm:items-center">
-              <p className="max-w-[38ch] text-xs leading-relaxed text-white/35">
+              <p className="max-w-[38ch] text-xs leading-relaxed text-copy-muted">
                 Your information will only be used for TekGlove updates and
                 product research.
               </p>
@@ -270,7 +272,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             className="space-y-7"
           >
             <div>
-              <p className="mb-3 text-sm font-medium text-white">
+              <p className="mb-3 text-sm font-medium text-primary">
                 Selected interests
               </p>
               <div className="flex flex-wrap gap-2">
@@ -281,7 +283,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
                   return (
                     <span
                       key={slug}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/65"
+                      className="rounded-full border border-primary/10 bg-primary/5 px-3 py-1.5 text-xs text-primary/65"
                     >
                       {product?.name}
                     </span>
@@ -306,7 +308,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
 
             {form.role === "Business or organisation" && (
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-white">
+                <span className="mb-2 block text-sm font-medium text-primary">
                   Organisation name
                 </span>
                 <input
@@ -320,7 +322,7 @@ export function WaitlistForm({ onCompleteAction }: WaitlistFormProps) {
             )}
 
             <label className="block">
-              <span className="mb-2 block text-sm font-medium text-white">
+              <span className="mb-2 block text-sm font-medium text-primary">
                 What would you use TekGlove for?
               </span>
               <textarea

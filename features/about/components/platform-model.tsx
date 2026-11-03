@@ -1,17 +1,19 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { principles } from "@/content/about";
 import {
   alternatingCardReveal,
   revealViewport,
   staggeredCardGroup,
 } from "@/shared/motion/card-reveal";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 export function PlatformModel() {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="border-b border-white/10 px-6 py-24 md:px-12">
+    <section className="border-b border-primary/10 px-6 py-24 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +25,7 @@ export function PlatformModel() {
         className="mb-14"
       >
         <p className="section-kicker mb-5">The Platform Model</p>
-        <h2 className="display-title text-[clamp(2.5rem,5vw,4.5rem)] text-white">
+        <h2 className="display-title text-[clamp(2.5rem,5vw,4.5rem)] text-primary">
           From Signal to Impact.
         </h2>
       </motion.div>
@@ -42,7 +44,7 @@ export function PlatformModel() {
             variants={alternatingCardReveal}
             className="surface-panel p-8 md:p-10"
           >
-            <h3 className="mb-3 font-heading text-2xl font-semibold tracking-[-0.035em] text-white">
+            <h3 className="mb-3 font-heading text-2xl font-semibold tracking-[-0.035em] text-primary">
               {principle.title}
             </h3>
             <p className="copy-secondary text-sm leading-[1.8]">

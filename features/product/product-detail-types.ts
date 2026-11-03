@@ -6,6 +6,9 @@ export type PublishedProductName =
 
 export type ProductVisual = {
   image?: string;
+  portraitImage?: string;
+  video?: string;
+  portraitVideo?: string;
   imageAlt?: string;
   presentation?: "product" | "editorial";
   icon: LucideIcon;

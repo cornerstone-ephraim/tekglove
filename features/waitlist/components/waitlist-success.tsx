@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 import { BsCheck2 } from "react-icons/bs";
 import { Button } from "@/shared/components/ui/button";
 
@@ -23,7 +25,7 @@ export function WaitlistSuccess({
         <BsCheck2 className="text-3xl" aria-hidden="true" />
       </div>
       <p className="section-kicker mb-5">Check your inbox</p>
-      <h2 className="display-title max-w-[10ch] text-4xl text-white sm:text-5xl">
+      <h2 className="display-title max-w-[10ch] text-4xl text-primary sm:text-5xl">
         Confirm your place.
       </h2>
       <p className="copy-secondary mt-6 max-w-[46ch] text-sm leading-[1.75] sm:text-base">

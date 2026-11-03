@@ -37,7 +37,7 @@ export function CustomSelect({
     >
       <label
         id={select.labelId}
-        className="mb-2 block text-sm font-medium text-white"
+        className="mb-2 block text-sm font-medium text-primary"
       >
         {label}
       </label>
@@ -56,17 +56,17 @@ export function CustomSelect({
             select.setOpen(true);
           }
         }}
-        className="pressable flex min-h-13 w-full items-center justify-between gap-4 rounded-xl border border-white/10 bg-white/4 px-4 text-left text-base transition-[border-color,background-color,box-shadow] outline-none hover:border-white/20 focus-visible:border-orange/70 focus-visible:bg-white/6 focus-visible:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]"
+        className="pressable flex min-h-13 w-full items-center justify-between gap-4 rounded-xl border border-primary/10 bg-white/4 px-4 text-left text-base transition-[border-color,background-color,box-shadow] outline-none hover:border-primary/20 focus-visible:border-orange/70 focus-visible:bg-white/6 focus-visible:shadow-[0_0_0_3px_rgba(249,115,22,0.12)]"
       >
         <span
           id={select.valueId}
-          className={value ? "text-white" : "text-white/25"}
+          className={value ? "text-primary" : "text-primary/25"}
         >
           {value || placeholder}
         </span>
         <BsChevronDown
           aria-hidden="true"
-          className={`shrink-0 text-sm text-white/50 transition-transform duration-200 ${select.open ? "rotate-180" : ""}`}
+          className={`shrink-0 text-sm text-primary/50 transition-transform duration-200 ${select.open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -75,7 +75,7 @@ export function CustomSelect({
           id={select.listboxId}
           role="listbox"
           aria-labelledby={select.labelId}
-          className="absolute z-30 mt-2 w-full overflow-hidden rounded-xl border border-white/12 bg-[#111113]/96 p-1.5 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-xl"
+          className="absolute z-30 mt-2 w-full overflow-hidden rounded-xl border border-primary/12 bg-surface-raised p-1.5 shadow-[0_24px_80px_rgba(0,0,0,0.55)] backdrop-blur-xl"
         >
           {options.map((option, index) => {
             const selected = option === value;
@@ -120,7 +120,7 @@ export function CustomSelect({
                   }
                 }}
                 className={`flex min-h-11 w-full items-center justify-between gap-4 rounded-lg px-3.5 py-2.5 text-left text-sm transition-colors outline-none hover:bg-white/7 focus-visible:bg-white/7 ${
-                  selected ? "bg-orange/10 text-orange" : "text-white/70"
+                  selected ? "bg-orange/10 text-orange" : "text-primary/70"
                 }`}
               >
                 <span>{option}</span>

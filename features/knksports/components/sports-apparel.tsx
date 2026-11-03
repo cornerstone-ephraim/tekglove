@@ -1,40 +1,58 @@
+import Image from "next/image";
 import { knkApparel } from "@/content/knksports";
+import { ButtonLink } from "@/shared/components/ui/button";
 
 export function SportsApparel() {
   return (
-    <section className="border-b border-white/10 px-6 py-24 md:px-12 md:py-32">
-      <div className="mx-auto max-w-375">
-        <div className="mb-12 grid gap-8 lg:grid-cols-2 lg:items-end">
-          <div>
-            <p className="section-kicker mb-5">Apparel and Gear</p>
-            <h2 className="display-title text-5xl text-white md:text-7xl">
-              Starting with gloves.
-              <br />
-              <span className="text-orange">Thinking beyond them.</span>
-            </h2>
-          </div>
-          <p className="copy-secondary max-w-xl text-lg leading-relaxed">
-            The Kinetix glove is the starting point for KNK Sports. Our broader
-            direction spans apparel and equipment for different sports, shaped
-            around how athletes move, train and prepare.
+    <section className="px-6 py-20 md:px-12 lg:px-20 lg:py-28">
+      <div className="grid items-center gap-12 lg:grid-cols-2">
+        <figure className="relative aspect-3/4 overflow-hidden rounded-3xl bg-surface">
+          <Image
+            src="/images/redesign/tekglove-kradle-portrait.webp"
+            alt="Kradle glove using the shared TekGlove design"
+            fill
+            sizes="(min-width: 1024px) 45vw, 90vw"
+            className="object-cover"
+          />
+        </figure>
+        <div>
+          <p className="mb-6 text-sm text-copy-secondary">Gear & Apparel</p>
+          <h2 className="story-heading">
+            The hand is
+            <br />
+            the starting point.
+          </h2>
+          <p className="mt-7 max-w-lg text-lg leading-relaxed text-copy-secondary">
+            Our first focus is the TEK Glove: breathable mesh, a grippy palm and
+            a flexible fit. Its dorsal dock holds the removable Kradle sensor,
+            bringing health, fitness and wellness into the KNK Sports
+            experience.
           </p>
+          <ButtonLink href="/product/kradle" className="mt-8">
+            Explore Kradle
+          </ButtonLink>
+          <div className="mt-12 border-t border-border pt-7">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h3 className="text-2xl font-medium">Beyond the glove</h3>
+              <span className="rounded-full border border-border px-3 py-1 text-xs">
+                In development
+              </span>
+            </div>
+            <p className="mt-4 max-w-lg leading-relaxed text-copy-secondary">
+              A wider ambition for apparel and equipment shaped around different
+              sports.
+            </p>
+            <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+              {knkApparel
+                .filter((item) => item.name !== "Gloves")
+                .map((item) => (
+                  <li key={item.name} className="text-lg">
+                    {item.name === "Clothes" ? "Clothing" : item.name}
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
-        <div className="grid gap-x-10 md:grid-cols-2 lg:grid-cols-3">
-          {knkApparel.map((item) => (
-            <article key={item.name} className="border-t border-white/15 py-8">
-              <h3 className="font-brand text-4xl font-bold text-white">
-                {item.name}
-              </h3>
-              <p className="copy-secondary mt-4 max-w-md text-sm leading-relaxed">
-                {item.description}
-              </p>
-            </article>
-          ))}
-        </div>
-        <p className="copy-secondary mt-6 max-w-3xl text-sm leading-relaxed">
-          These categories describe the direction of the range. Product details,
-          availability and connected features will be announced individually.
-        </p>
       </div>
     </section>
   );
