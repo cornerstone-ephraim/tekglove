@@ -12,9 +12,9 @@ export function ActivityModes() {
             <span className="text-orange">Different modes.</span>
           </h2>
           <p className="copy-secondary max-w-xl text-lg leading-relaxed">
-            The TEK and KNK modules form the two-hand system. These six modes
-            describe its activity-specific uses, with the right-hand KNK module
-            configured for the activity.
+            These six modes describe the activity-specific direction of KNK
+            Sports. They sit alongside the athlete activities and guide how the
+            connected experience can serve different settings.
           </p>
         </div>
         <p className="copy-secondary mb-8 max-w-3xl text-sm leading-relaxed">

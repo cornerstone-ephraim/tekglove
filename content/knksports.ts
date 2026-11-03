@@ -85,3 +85,33 @@ export const knkModes = [
     features: ["Field monitoring", "Silent communication", "Navigation"],
   },
 ] as const;
+
+export const knkApparel = [
+  {
+    name: "Gloves",
+    description:
+      "Beginning with the Kinetix glove and the hand’s connection to sport.",
+  },
+  {
+    name: "Shoes",
+    description:
+      "Footwear as part of a broader approach to sport-specific gear.",
+  },
+  {
+    name: "Braces",
+    description: "Support wear within the developing KNK Sports range.",
+  },
+  {
+    name: "Clothes",
+    description:
+      "Apparel shaped around different training and sporting activities.",
+  },
+  {
+    name: "Glasses",
+    description: "Eyewear as part of the wider equipment direction.",
+  },
+  {
+    name: "Helmets",
+    description: "Headgear within the vision for sport-specific equipment.",
+  },
+] as const;

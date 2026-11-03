@@ -6,7 +6,7 @@ import { knkSports } from "@/content/knksports";
 import { ButtonLink } from "@/shared/components/ui/button";
 import { ConnectedSystem } from "./components/connected-system";
 import { ActivityModes } from "./components/activity-modes";
-import { KradleSensor } from "./components/kradle-sensor";
+import { SportsApparel } from "./components/sports-apparel";
 
 export default function KnkSportsPage() {
   useLayoutEffect(() => {
@@ -25,9 +25,9 @@ export default function KnkSportsPage() {
               the <span className="text-orange">athlete.</span>
             </h1>
             <p className="copy-secondary mt-8 max-w-xl text-lg leading-relaxed">
-              Your sport. Your training. Your next step. KNK Sports brings
-              TekGlove’s connected gloves and gear into the world of the
-              athlete.
+              KNK Sports is the athlete-centred part of TekGlove, bringing
+              together sports apparel, gear and a connected experience. Starting
+              with the Kinetix glove, built around how you train.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <ButtonLink href="/waitlist" size="lg">
@@ -78,6 +78,8 @@ export default function KnkSportsPage() {
         </div>
       </section>
 
+      <SportsApparel />
+
       <section
         id="sports"
         className="scroll-mt-24 border-b border-white/10 px-6 py-24 md:px-12 md:py-32"
@@ -122,41 +124,35 @@ export default function KnkSportsPage() {
           <figure>
             <div className="relative aspect-square overflow-hidden rounded-3xl bg-surface">
               <Image
-                src="/images/tekglove-platform-angle.webp"
-                alt="TekGlove glove with its dorsal-mounted module"
+                src="/images/kinetik-hero.webp"
+                alt="Kinetix sports glove with a dorsal-mounted module"
                 fill
                 sizes="(min-width: 1024px) 45vw, 90vw"
                 className="object-contain"
               />
             </div>
             <figcaption className="copy-secondary mt-4 text-sm">
-              The TekGlove platform. The foundation for KNK Sports.
+              The Kinetix glove. The starting point for KNK Sports.
             </figcaption>
           </figure>
           <div>
             <p className="section-kicker mb-5">Powered by TekGlove</p>
             <h2 className="display-title text-5xl text-white md:text-6xl">
-              The gear.
+              Kinetix.
               <br />
-              The connection.
-              <br />
-              <span className="text-orange">The athlete.</span>
+              <span className="text-orange">Made for KNK Sports.</span>
             </h2>
             <p className="copy-secondary mt-8 max-w-xl text-base leading-relaxed">
-              TekGlove provides the gloves, gear and modular technology. KNK
-              Sports brings an athlete-centred perspective to how that
-              technology fits into training and sport.
+              The Kinetix glove brings TekGlove’s hand-focused technology into
+              KNK Sports. It anchors a wider vision for apparel and gear across
+              different sports.
             </p>
             <p className="copy-secondary mt-5 max-w-xl text-base leading-relaxed">
-              A glove is the starting point. Removable modules extend the
-              platform, with connected experiences forming part of the wider
-              vision. As the range develops, we’ll share what each product can
-              do.
+              The KNK Module and TEK App form the connected side of that vision:
+              a portable health and performance sensor, paired with software for
+              device management and training insights.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <ButtonLink href="/product/kinetik" variant="secondary">
-                Explore Kinetik
-              </ButtonLink>
               <ButtonLink href="/about" variant="secondary">
                 Meet TekGlove
               </ButtonLink>
@@ -167,7 +163,6 @@ export default function KnkSportsPage() {
 
       <ActivityModes />
       <ConnectedSystem />
-      <KradleSensor />
 
       <section className="px-6 py-24 text-center md:px-12 md:py-32">
         <p className="section-kicker mb-5">Be Part of What Comes Next</p>
