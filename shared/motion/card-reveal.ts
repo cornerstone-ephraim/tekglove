@@ -2,6 +2,7 @@ export const motionEaseOut = [0.23, 1, 0.32, 1] as const;
 
 export const revealViewport = {
   once: true,
+  amount: 0.25,
   margin: "0px 0px -15% 0px",
 } as const;
 

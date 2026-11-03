@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 import { PersonalIntelligenceDiagram } from "@/shared/components/ui/personal-intelligence-diagram";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { revealViewport } from "@/shared/motion/card-reveal";
@@ -11,7 +13,7 @@ export function PersonalIntelligenceArchitecture() {
   return (
     <section
       id="personal-intelligence"
-      className="relative scroll-mt-16 overflow-hidden border-b border-white/8 bg-surface py-28 md:py-36"
+      className="relative scroll-mt-16 overflow-hidden border-b border-primary/8 bg-surface py-28 md:py-36"
     >
       <ShaderBackdrop
         variant="intelligence"
@@ -38,7 +40,7 @@ export function PersonalIntelligenceArchitecture() {
             <p className="section-kicker mb-5">
               Personal Intelligence Architecture
             </p>
-            <h2 className="display-title text-[clamp(3rem,7vw,6rem)] text-white">
+            <h2 className="display-title text-[clamp(3rem,7vw,6rem)] text-primary">
               Connected Hand
               <br />
               <span className="text-orange">Intelligence.</span>
@@ -61,7 +63,7 @@ export function PersonalIntelligenceArchitecture() {
             duration: reduceMotion ? 0.2 : 0.5,
             ease: [0.23, 1, 0.32, 1],
           }}
-          className="relative border-y border-white/10 bg-[#070708]/45 py-6 md:py-8"
+          className="relative border-y border-primary/10 bg-surface py-6 md:py-8"
         >
           <PersonalIntelligenceDiagram />
         </motion.div>

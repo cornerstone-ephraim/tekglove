@@ -1,10 +1,12 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { about } from "@/content/about";
 import { ButtonLink } from "@/shared/components/ui/button";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { revealViewport } from "@/shared/motion/card-reveal";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 export function MissionCta() {
   const reduceMotion = useReducedMotion();
@@ -28,7 +30,7 @@ export function MissionCta() {
         <p className="copy-secondary mx-auto mb-8 max-w-[62ch] text-[0.95rem] leading-[1.85]">
           {about.mission}
         </p>
-        <h2 className="display-title mb-8 text-[clamp(2.5rem,6vw,5rem)] text-white">
+        <h2 className="display-title mb-8 text-[clamp(2.5rem,6vw,5rem)] text-primary">
           Six Gloves.
           <br />
           <span className="text-orange">One Connected Vision.</span>

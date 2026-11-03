@@ -41,12 +41,12 @@ export const productFaqs = {
     {
       question: "Who is Kinetik designed for?",
       answer:
-        "Kinetik is designed for people who want to understand how they move, from everyday training and fitness to coaching and organised sport. It is not limited to professional athletes.",
+        "Kinetik is the robotics direction of TekGlove, focused on motion, grip and gesture for developers, researchers and human–machine interaction teams.",
     },
     {
       question: "What data does Kinetik capture?",
       answer:
-        "Kinetik is being developed to interpret movement, grip, gestures, biometrics, and hand position, turning those signals into useful performance context.",
+        "Kinetik is being developed around hand movement, grip and gestures. Specific capabilities and supported integrations will be shared as development progresses.",
     },
     {
       question: "Does Kinetik replace a smartwatch?",
@@ -58,12 +58,12 @@ export const productFaqs = {
     {
       question: "What is Kradle designed to support?",
       answer:
-        "Kradle is being developed to support connected maternal monitoring by combining the Smart Dorsal Sensor with a specialist Doppler module and care-network connectivity.",
+        "Kradle is the health, fitness and wellness direction of TekGlove, connecting with the athlete-centred KNK Sports range.",
     },
     {
       question: "Who is Kradle intended for?",
       answer:
-        "Kradle is intended for pregnant women and the people supporting their care, including midwives, doctors, rural health workers, maternal health organisations, and Kradle Centres.",
+        "Kradle is intended for people interested in understanding their activity, training and everyday wellbeing.",
     },
     {
       question: "Does Kradle replace professional medical care?",

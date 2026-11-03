@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 import Image from "next/image";
 import {
   alternatingCardReveal,
@@ -33,11 +35,11 @@ export function StickyFeatures() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="border-b border-white/8 py-20 md:py-28">
+    <section className="border-b border-primary/8 py-20 md:py-28">
       <div className="mb-14 grid gap-6 px-6 md:grid-cols-[1.2fr_0.8fr] md:items-end md:px-12">
         <div>
           <p className="section-kicker mb-5">KINETIK™ · TekGlove V1</p>
-          <h2 className="display-title max-w-[12ch] text-[clamp(2.75rem,6vw,5.5rem)] text-white">
+          <h2 className="display-title max-w-[12ch] text-[clamp(2.75rem,6vw,5.5rem)] text-primary">
             The flagship, built around the hand.
           </h2>
         </div>
@@ -83,7 +85,7 @@ export function StickyFeatures() {
                   {f.tag}
                 </span>
               </div>
-              <h3 className="font-heading text-[clamp(2rem,4vw,3rem)] leading-[1.02] font-semibold tracking-[-0.04em] text-white">
+              <h3 className="font-heading text-[clamp(2rem,4vw,3rem)] leading-[1.02] font-semibold tracking-[-0.04em] text-primary">
                 {f.title}
               </h3>
               <p className="copy-secondary max-w-[48ch] font-sans text-[0.95rem] leading-[1.8]">

@@ -3,17 +3,11 @@ import ProductPage from "@/features/product/product-page";
 import { Metadata } from "next";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kradle Maternal and Health Monitoring Glove",
+  title: "Kradle | Health, Fitness and Wellness",
   description:
-    "Explore Kradle, the Smart Dorsal Sensor powered maternal health glove with Doppler sensing, pregnancy monitoring, alerts, and connected care.",
+    "Explore Kradle, the health, fitness and wellness direction of TekGlove and the connected system behind KNK Sports.",
   path: "/product/kradle",
-  keywords: [
-    "Kradle glove",
-    "maternal health wearable",
-    "fetal heartbeat monitoring",
-    "pregnancy monitoring technology",
-    "telemedicine glove",
-  ],
+  keywords: ["Kradle", "health wearable", "fitness", "wellness", "KNK Sports"],
 });
 
 export default function KradlePage() {

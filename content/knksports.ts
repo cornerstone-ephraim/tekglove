@@ -18,7 +18,7 @@ export const knkSports = [
       "The grip connects you to the club. That makes the hand a natural place to begin understanding your practice.",
   },
   {
-    name: "American football",
+    name: "Football",
     focus: "Be ready for the next play.",
     description:
       "Catching, carrying and handling. A focus on the hand skills and coordination athletes bring to the field.",
@@ -90,7 +90,7 @@ export const knkApparel = [
   {
     name: "Gloves",
     description:
-      "Beginning with the Kinetix glove and the hand’s connection to sport.",
+      "Beginning with the Kradle system and the hand’s connection to sport.",
   },
   {
     name: "Shoes",

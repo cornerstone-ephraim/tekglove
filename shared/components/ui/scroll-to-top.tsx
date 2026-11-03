@@ -1,7 +1,9 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { BsArrowUp } from "react-icons/bs";
 
 export function ScrollToTop() {
@@ -46,9 +48,9 @@ export function ScrollToTop() {
           }}
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="pressable group fixed right-6 bottom-6 z-40 flex h-8 w-8 cursor-pointer items-center justify-center border border-white/70 bg-bg backdrop-blur-lg transition-colors duration-300 ease-out hover:border-orange/80 hover:bg-bg/95 md:right-8 md:bottom-8"
+          className="pressable group fixed right-6 bottom-6 z-40 flex h-8 w-8 cursor-pointer items-center justify-center border border-primary/70 bg-bg backdrop-blur-lg transition-colors duration-300 ease-out hover:border-orange/80 hover:bg-bg/95 md:right-8 md:bottom-8"
         >
-          <BsArrowUp className="relative z-2 text-sm text-white/80 transition-colors duration-300 group-hover:text-orange" />
+          <BsArrowUp className="relative z-2 text-sm text-primary/80 transition-colors duration-300 group-hover:text-orange" />
 
           <span
             aria-hidden="true"

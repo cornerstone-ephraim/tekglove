@@ -1,17 +1,19 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { whyHandReasons } from "@/content/about";
 import {
   alternatingCardReveal,
   revealViewport,
   staggeredCardGroup,
 } from "@/shared/motion/card-reveal";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 
 export function WhyHand() {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="border-b border-white/10 bg-surface px-6 py-24 md:px-12">
+    <section className="border-b border-primary/10 bg-surface px-6 py-24 md:px-12">
       <motion.div
         initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +26,7 @@ export function WhyHand() {
       >
         <div>
           <p className="section-kicker mb-5">Why the Hand?</p>
-          <h2 className="display-title text-[clamp(3rem,7vw,6rem)] text-white">
+          <h2 className="display-title text-[clamp(3rem,7vw,6rem)] text-primary">
             The Hand Holds
             <br />
             <span className="text-orange">More Than Tools.</span>
@@ -51,7 +53,7 @@ export function WhyHand() {
             variants={alternatingCardReveal}
             className="surface-panel p-8 md:p-10"
           >
-            <h3 className="mb-3 font-heading text-2xl font-semibold tracking-[-0.035em] text-white">
+            <h3 className="mb-3 font-heading text-2xl font-semibold tracking-[-0.035em] text-primary">
               {reason.title}
             </h3>
             <p className="copy-secondary max-w-[46ch] text-sm leading-[1.8]">

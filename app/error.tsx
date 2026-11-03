@@ -7,7 +7,7 @@ export default function GlobalError({ reset }: { reset: () => void }) {
     <section className="grid min-h-svh place-items-center bg-bg px-6 text-center">
       <div className="max-w-xl">
         <p className="section-kicker mb-5">Something went wrong</p>
-        <h1 className="display-title text-[clamp(2.75rem,7vw,5rem)] text-white">
+        <h1 className="display-title text-[clamp(2.75rem,7vw,5rem)] text-primary">
           Let&apos;s try that again.
         </h1>
         <p className="copy-secondary mx-auto mt-6 max-w-[48ch] leading-[1.8]">

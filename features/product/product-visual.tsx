@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { ProductFilm } from "@/shared/components/ui/product-film";
+import Image, { getImageProps } from "next/image";
 import { FloatingGlove } from "@/shared/components/ui/floating-glove";
 import type { ProductVisual as ProductVisualConfig } from "./product-detail-types";
 
@@ -10,6 +11,9 @@ type ProductVisualProps = ProductVisualConfig & {
 
 export function ProductVisual({
   image,
+  portraitImage,
+  video,
+  portraitVideo,
   imageAlt = "",
   presentation = "product",
   icon: Icon,
@@ -17,17 +21,50 @@ export function ProductVisual({
   priority = false,
   imageClassName = "max-w-136",
 }: ProductVisualProps) {
-  if (image && presentation === "editorial") {
+  if (image && video) {
     return (
-      <figure className="relative z-10 aspect-4/3 w-full max-w-200 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          sizes="(min-width: 1024px) 55vw, 100vw"
-          className="object-cover"
-          priority={priority}
-        />
+      <ProductFilm
+        src={video}
+        portraitSrc={portraitVideo}
+        poster={image}
+        portraitPoster={portraitImage}
+        label={imageAlt || "Product concept film"}
+        className="relative z-10 aspect-9/16 w-full max-w-200 overflow-hidden rounded-3xl border border-primary/10 bg-surface md:aspect-4/3"
+      />
+    );
+  }
+  if (image && presentation === "editorial") {
+    const { props: landscapeProps } = getImageProps({
+      src: image,
+      alt: imageAlt,
+      fill: true,
+      sizes: "(min-width: 1024px) 55vw, 100vw",
+      priority,
+    });
+    const portraitProps = portraitImage
+      ? getImageProps({
+          src: portraitImage,
+          alt: imageAlt,
+          fill: true,
+          sizes: "100vw",
+          priority,
+        }).props
+      : undefined;
+    return (
+      <figure
+        className={`relative z-10 w-full max-w-200 overflow-hidden rounded-3xl border border-primary/10 bg-primary/5 shadow-2xl ${portraitImage ? "aspect-9/16 md:aspect-4/3" : "aspect-4/3"}`}
+      >
+        <picture>
+          {portraitProps && (
+            <source
+              media="(max-width: 767px)"
+              srcSet={portraitProps.srcSet}
+              sizes={portraitProps.sizes}
+            />
+          )}
+          {/* getImageProps supplies Next.js optimization for art-directed sources. */}
+          <img {...landscapeProps} alt={imageAlt} className="object-cover" />
+        </picture>
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/25 via-transparent to-transparent" />
       </figure>
     );
@@ -49,13 +86,16 @@ export function ProductVisual({
   }
 
   return (
-    <FloatingGlove delay={delay} className="relative z-10">
-      <div className="relative grid size-64 place-items-center sm:size-80">
-        <div className="absolute inset-0 rounded-full border border-orange/15 bg-orange/5 shadow-[0_0_110px_rgba(249,115,22,0.12)]" />
-        <div className="absolute inset-[18%] rounded-full border border-white/10" />
-        <div className="absolute inset-[34%] rounded-full border border-orange/25 bg-black/55 backdrop-blur-xl" />
-        <Icon className="relative text-orange" size={72} strokeWidth={1.1} />
-      </div>
-    </FloatingGlove>
+    <figure className="flex min-h-100 w-full flex-col items-center justify-center gap-6 bg-surface px-8 py-16 md:min-h-120">
+      <Icon
+        size={96}
+        strokeWidth={1}
+        className="text-copy-secondary"
+        aria-hidden="true"
+      />
+      <figcaption className="text-sm text-copy-secondary">
+        Product imagery in development
+      </figcaption>
+    </figure>
   );
 }

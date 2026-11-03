@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 
 const TAGLINE_ITEMS = [
   "Smart Dorsal Sensor",
@@ -26,7 +28,7 @@ export function Marquee() {
         duration: reduceMotion ? 0.2 : 0.8,
         delay: reduceMotion ? 0 : 0.3,
       }}
-      className="overflow-hidden border-y border-white/8 bg-surface/80 py-5"
+      className="overflow-hidden border-y border-primary/8 bg-surface/80 py-5"
     >
       <motion.div
         className="flex w-max"
@@ -45,7 +47,7 @@ export function Marquee() {
             {TAGLINE_ITEMS.map((t, i) => (
               <span
                 key={`${group}-${i}`}
-                className="shrink-0 font-mono text-xs tracking-[0.08em] text-white/62 md:text-sm"
+                className="shrink-0 font-mono text-xs tracking-[0.08em] text-primary/62 md:text-sm"
               >
                 <span className="mr-4 text-orange">✦</span>
                 {t}

@@ -1,12 +1,9 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import { useRef } from "react";
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 
 const originSports = ["Box", "Run", "Bike"];
 const handSignals = ["Movement", "Grip", "Gesture", "Control"];
@@ -60,7 +57,7 @@ export function AboutHero() {
               delay: reduceMotion ? 0 : 0.05,
               ease: [0.23, 1, 0.32, 1],
             }}
-            className="display-title mb-8 max-w-[10ch] text-[clamp(3.75rem,8vw,8rem)] tracking-[-0.06em] text-white"
+            className="display-title mb-8 max-w-[10ch] text-[clamp(3.75rem,8vw,8rem)] tracking-[-0.06em] text-primary"
           >
             From an Idea
             <br />
@@ -93,19 +90,19 @@ export function AboutHero() {
             delay: reduceMotion ? 0 : 0.1,
             ease: [0.23, 1, 0.32, 1],
           }}
-          className="relative overflow-hidden rounded-4xl border border-white/12 bg-white/4.5 p-6 shadow-2xl backdrop-blur-2xl md:p-9"
+          className="relative overflow-hidden rounded-4xl border border-primary/12 bg-white/4.5 p-6 shadow-2xl backdrop-blur-2xl md:p-9"
         >
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,rgba(249,115,22,0.16),transparent_48%)]" />
           <div className="relative">
-            <div className="flex items-center justify-between border-b border-white/10 pb-5">
-              <p className="font-mono text-xs tracking-[0.08em] text-white/55">
+            <div className="flex items-center justify-between border-b border-primary/10 pb-5">
+              <p className="font-mono text-xs tracking-[0.08em] text-primary/55">
                 Origin signal
               </p>
               <div className="flex gap-2">
                 {originSports.map((sport) => (
                   <span
                     key={sport}
-                    className="rounded-full border border-white/12 bg-black/25 px-3 py-1.5 font-mono text-xs text-white/70"
+                    className="rounded-full border border-primary/12 bg-surface-raised/80 px-3 py-1.5 font-mono text-xs text-primary/70"
                   >
                     {sport}
                   </span>
@@ -122,7 +119,7 @@ export function AboutHero() {
                 <p className="mb-2 font-mono text-xs tracking-[0.08em] text-orange">
                   Compact sensor
                 </p>
-                <p className="max-w-[34ch] text-sm leading-[1.75] text-white/68">
+                <p className="max-w-[34ch] text-sm leading-[1.75] text-primary/68">
                   One small device searching for the body position with the most
                   useful signal.
                 </p>
@@ -130,16 +127,16 @@ export function AboutHero() {
                 <p className="mb-2 font-mono text-xs tracking-[0.08em] text-orange">
                   The breakthrough
                 </p>
-                <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] leading-none font-semibold tracking-[-0.055em] text-white">
+                <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] leading-none font-semibold tracking-[-0.055em] text-primary">
                   The Hand
                 </h2>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-2 border-t border-white/10 pt-5 sm:grid-cols-4">
+            <div className="grid grid-cols-2 gap-2 border-t border-primary/10 pt-5 sm:grid-cols-4">
               {handSignals.map((signal) => (
                 <div
                   key={signal}
-                  className="rounded-xl bg-black/35 px-3 py-4 text-center font-mono text-xs tracking-[0.04em] text-white/68"
+                  className="rounded-xl bg-surface-raised/80 px-3 py-4 text-center font-mono text-xs tracking-[0.04em] text-primary/68"
                 >
                   {signal}
                 </div>

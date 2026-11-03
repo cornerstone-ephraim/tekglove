@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 import { ButtonLink } from "@/shared/components/ui/button";
 import { revealViewport } from "@/shared/motion/card-reveal";
 import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
@@ -25,7 +27,7 @@ export function HeroCTA() {
           }}
         >
           <p className="section-kicker mb-6">Limited Beta</p>
-          <h2 className="display-title mb-6 text-[clamp(2.5rem,8vw,6rem)] text-white">
+          <h2 className="display-title mb-6 text-[clamp(2.5rem,8vw,6rem)] text-primary">
             Be First to
             <br />
             Wear It.

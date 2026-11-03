@@ -19,9 +19,9 @@ type SharedButtonProps = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "border-orange bg-orange text-black hover:border-orange/85 hover:bg-orange/85",
+    "border-primary bg-primary text-bg hover:border-primary/85 hover:bg-primary/85",
   secondary:
-    "border-white/25 bg-white/4 text-white hover:border-orange hover:bg-orange/8 hover:text-orange",
+    "border-primary/25 bg-transparent text-primary hover:border-primary hover:bg-primary/5",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {

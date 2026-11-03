@@ -1,7 +1,9 @@
 "use client";
 
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
 import Image from "next/image";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { revealViewport } from "@/shared/motion/card-reveal";
 import type { ProductDetailConfig } from "../product-detail-types";
 
@@ -13,7 +15,7 @@ export function ProductOverview({ overview }: ProductOverviewProps) {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="border-b border-white/10 px-6 py-20 md:px-12 md:py-28">
+    <section className="border-b border-primary/10 px-6 py-20 md:px-12 md:py-28">
       <motion.div
         initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +28,7 @@ export function ProductOverview({ overview }: ProductOverviewProps) {
       >
         <div>
           <p className="section-kicker mb-5">{overview.kicker}</p>
-          <h2 className="display-title max-w-[11ch] text-[clamp(2.8rem,6vw,5rem)] text-white">
+          <h2 className="display-title max-w-[11ch] text-[clamp(2.8rem,6vw,5rem)] text-primary">
             {overview.title}
             <br />
             <span className="text-orange">{overview.titleAccent}</span>
@@ -45,7 +47,7 @@ export function ProductOverview({ overview }: ProductOverviewProps) {
           duration: reduceMotion ? 0.2 : 0.65,
           ease: [0.23, 1, 0.32, 1],
         }}
-        className="relative aspect-4/3 overflow-hidden rounded-3xl border border-white/10 bg-white sm:aspect-3/2"
+        className="relative aspect-4/3 overflow-hidden rounded-3xl border border-primary/10 bg-white sm:aspect-3/2"
       >
         <Image
           src={overview.image}
@@ -69,7 +71,7 @@ export function ProductOverview({ overview }: ProductOverviewProps) {
         >
           <div>
             <p className="section-kicker mb-4">{overview.technical.kicker}</p>
-            <h3 className="font-heading text-[clamp(2.25rem,5vw,4rem)] font-semibold tracking-[-0.05em] text-white">
+            <h3 className="font-heading text-[clamp(2.25rem,5vw,4rem)] font-semibold tracking-[-0.05em] text-primary">
               {overview.technical.title}
             </h3>
           </div>
@@ -87,7 +89,7 @@ export function ProductOverview({ overview }: ProductOverviewProps) {
               duration: reduceMotion ? 0.2 : 0.65,
               ease: [0.23, 1, 0.32, 1],
             }}
-            className="overflow-hidden rounded-3xl border border-white/10 bg-surface"
+            className="overflow-hidden rounded-3xl border border-primary/10 bg-surface"
           >
             <Image
               src={overview.technical.crossSectionImage}
@@ -108,7 +110,7 @@ export function ProductOverview({ overview }: ProductOverviewProps) {
               delay: reduceMotion ? 0 : 0.08,
               ease: [0.23, 1, 0.32, 1],
             }}
-            className="overflow-hidden rounded-3xl border border-white/10 bg-surface"
+            className="overflow-hidden rounded-3xl border border-primary/10 bg-surface"
           >
             <Image
               src={overview.technical.detailImage}

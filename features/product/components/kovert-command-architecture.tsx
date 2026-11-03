@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 import { revealViewport } from "@/shared/motion/card-reveal";
 import { SecurityArchitectureSVG } from "./security-architecture-svg";
 import { SecurityArchitectureMobileSVG } from "./security-architecture-mobile-svg";
@@ -8,7 +10,7 @@ import { SecurityArchitectureMobileSVG } from "./security-architecture-mobile-sv
 export function KovertCommandArchitecture() {
   const reduceMotion = useReducedMotion();
   return (
-    <section className="relative overflow-hidden border-b border-white/10 px-6 py-24 md:px-12 md:py-32">
+    <section className="relative overflow-hidden border-b border-primary/10 px-6 py-24 md:px-12 md:py-32">
       <div className="grid gap-12 lg:grid-cols-[minmax(18rem,0.72fr)_minmax(0,1.28fr)] lg:items-center xl:gap-20">
         <motion.div
           initial={{ opacity: 0, y: reduceMotion ? 0 : 16 }}
@@ -20,7 +22,7 @@ export function KovertCommandArchitecture() {
           }}
         >
           <p className="section-kicker mb-5">Kovert Command Architecture</p>
-          <h2 className="display-title max-w-[12ch] text-[clamp(2.8rem,5vw,4.75rem)] text-white">
+          <h2 className="display-title max-w-[12ch] text-[clamp(2.8rem,5vw,4.75rem)] text-primary">
             Every Mission Feed.
             <br />
             <span className="text-orange">One Wearable Command Centre.</span>

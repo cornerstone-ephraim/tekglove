@@ -1,6 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
+
+import { motion } from "motion/react";
 import { motionEaseOut, revealViewport } from "@/shared/motion/card-reveal";
 
 export function OriginStory() {
@@ -21,7 +23,7 @@ export function OriginStory() {
   ];
 
   return (
-    <section className="border-b border-white/10 px-6 py-24 md:px-12">
+    <section className="border-b border-primary/10 px-6 py-24 md:px-12">
       <div className="grid gap-16 md:grid-cols-2">
         {stories.map((story, index) => (
           <motion.div
@@ -41,7 +43,7 @@ export function OriginStory() {
             }}
           >
             <p className="section-kicker mb-5">{story.kicker}</p>
-            <h2 className="mb-6 font-heading text-[clamp(2.4rem,5vw,4rem)] font-semibold tracking-[-0.04em] text-white">
+            <h2 className="mb-6 font-heading text-[clamp(2.4rem,5vw,4rem)] font-semibold tracking-[-0.04em] text-primary">
               {story.title}
             </h2>
             <p className="copy-secondary max-w-[62ch] text-base leading-[1.9]">

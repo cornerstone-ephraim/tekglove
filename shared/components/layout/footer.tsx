@@ -20,11 +20,11 @@ export default function Footer() {
   return (
     <footer
       id="site-footer"
-      className="relative z-0 scroll-mt-16 overflow-hidden border-t border-white/8 bg-surface text-primary lg:min-h-[78svh]"
+      className="relative z-0 scroll-mt-16 overflow-hidden border-t border-primary/8 bg-sage text-primary lg:min-h-120"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-[-0.18em] overflow-hidden font-brand text-[clamp(13rem,31vw,38rem)] leading-[0.7] font-bold tracking-[-0.075em] whitespace-nowrap text-white/4 uppercase select-none"
+        className="pointer-events-none absolute inset-x-0 bottom-[-0.18em] overflow-hidden font-brand text-[clamp(13rem,31vw,38rem)] leading-[0.7] font-bold tracking-[-0.075em] whitespace-nowrap text-primary/4 uppercase select-none"
       >
         TekGlove
       </div>
@@ -33,8 +33,8 @@ export default function Footer() {
         className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-orange/35 to-transparent"
       />
 
-      <div className="relative z-10 flex w-full flex-col px-6 pt-16 pb-8 md:px-12 md:pt-24 md:pb-10 lg:min-h-[78svh]">
-        <div className="grid gap-14 md:grid-cols-2 xl:grid-cols-[1.35fr_0.7fr_0.9fr_1fr] xl:gap-20">
+      <div className="relative z-10 flex w-full flex-col px-6 py-8 md:px-12 md:pt-18 md:pb-9 lg:min-h-120">
+        <div className="grid gap-14 md:grid-cols-2 xl:grid-cols-[1.35fr_0.7fr_0.9fr_1fr] xl:gap-20 md:pb-6">
           <FooterBrand />
           <FooterColumn title="Company" links={companyLinks} />
           <FooterColumn
@@ -48,13 +48,13 @@ export default function Footer() {
           <FooterContact />
         </div>
 
-        <div className="mt-20 border-t border-white/10 pt-7 md:mt-auto md:pt-7">
-          <div className="grid gap-4 font-mono text-xs leading-relaxed text-white/65 md:grid-cols-2 md:items-center">
+        <div className="mt-20 border-t border-primary/10 pt-7 md:mt-auto md:pt-7">
+          <div className="grid gap-4 font-mono text-xs leading-relaxed text-primary/65 md:grid-cols-2 md:items-center">
             <p>© {new Date().getFullYear()} TekGlove. All rights reserved.</p>
             <p className="md:text-right">{site.tagline}</p>
           </div>
 
-          <p className="mt-7 max-w-5xl border-t border-white/8 pt-7 font-sans text-xs leading-[1.8] text-white/58">
+          <p className="mt-7 max-w-5xl border-t border-primary/8 pt-7 font-sans text-xs leading-[1.8] text-primary/58">
             TekGlove develops connected wearable systems that capture and
             interpret hand data across sport, health, recovery, defence,
             computing, and industry. Product capabilities described on this
@@ -77,7 +77,7 @@ function FooterBrand() {
           height={58}
           className="opacity-90"
         />
-        <span className="font-brand text-2xl leading-[0.88] font-bold tracking-[0.09em] text-white uppercase">
+        <span className="font-brand text-2xl leading-[0.88] font-bold tracking-[0.09em] text-primary uppercase">
           Tek
           <br />
           <span className="text-orange">Glove</span>
@@ -112,14 +112,14 @@ function FooterColumn({
             {link.href ? (
               <Link
                 href={link.href}
-                className="group inline-flex items-center gap-2 font-sans text-sm text-white/68 transition-colors duration-200 hover:text-orange"
+                className="group inline-flex items-center gap-2 font-sans text-sm text-primary/68 transition-colors duration-200 hover:text-orange"
               >
                 {link.label}
               </Link>
             ) : (
-              <div className="flex flex-wrap items-center gap-2 font-sans text-sm text-white/48">
+              <div className="flex flex-wrap items-center gap-2 font-sans text-sm text-primary/48">
                 <span>{link.label}</span>
-                <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-xxs tracking-[0.04em] text-white/45">
+                <span className="rounded-full border border-primary/10 px-2 py-0.5 font-mono text-xxs tracking-[0.04em] text-primary/45">
                   {link.status}
                 </span>
               </div>
@@ -155,7 +155,7 @@ function FooterContact() {
               href={social.href}
               target="_blank"
               rel="noreferrer"
-              className="group flex items-center gap-4 font-sans text-sm leading-[1.75] text-white/68 transition-colors duration-200 hover:text-orange"
+              className="group flex items-center gap-4 font-sans text-sm leading-[1.75] text-primary/68 transition-colors duration-200 hover:text-orange"
               aria-label={`TekGlove on ${social.platform}`}
             >
               <span className="grid size-9 shrink-0 place-items-center rounded-full bg-surface text-orange transition-colors duration-200 group-hover:bg-orange/10">
@@ -178,7 +178,7 @@ function ContactItem({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex items-start gap-4 font-sans text-sm leading-[1.75] text-white/68">
+    <div className="flex items-start gap-4 font-sans text-sm leading-[1.75] text-primary/68">
       <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-surface text-orange">
         {icon}
       </span>
@@ -189,7 +189,7 @@ function ContactItem({
 
 function FooterHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-mono text-xs font-medium tracking-[0.08em] text-white/65">
+    <h2 className="font-mono text-xs font-medium tracking-[0.08em] text-primary/65">
       {children}
     </h2>
   );

@@ -50,7 +50,7 @@ export function DesktopProductMenu({
         aria-expanded={open}
         aria-haspopup="menu"
         className={`flex items-center gap-2 border-0 bg-transparent p-0 font-sans text-[0.82rem] leading-normal font-medium tracking-[-0.01em] transition-colors duration-200 ${
-          active ? "text-orange" : "text-white/70 hover:text-white"
+          active ? "text-orange" : "text-primary/70 hover:text-primary"
         }`}
       >
         Products
@@ -70,7 +70,7 @@ export function DesktopProductMenu({
               duration: reduceMotion ? 0.12 : 0.2,
               ease: [0.23, 1, 0.32, 1],
             }}
-            className="absolute top-[calc(100%+1rem)] left-1/2 w-56 -translate-x-1/2 rounded-2xl border border-white/10 bg-black/92 p-2 shadow-2xl backdrop-blur-2xl"
+            className="absolute top-[calc(100%+1rem)] left-1/2 w-56 -translate-x-1/2 rounded-2xl border border-primary/10 bg-bg/98 p-2 shadow-2xl backdrop-blur-2xl"
             role="menu"
           >
             {productNavLinks.map((link) => {
@@ -84,7 +84,7 @@ export function DesktopProductMenu({
                   className={`block rounded-xl px-4 py-3 font-sans text-sm font-medium transition-colors duration-200 ${
                     linkActive
                       ? "bg-orange/10 text-orange"
-                      : "text-white/72 hover:bg-white/5 hover:text-white"
+                      : "text-primary/72 hover:bg-primary/5 hover:text-primary"
                   }`}
                 >
                   {link.label}
@@ -107,7 +107,7 @@ export function MobileProductMenu({
   const active = pathname.startsWith("/product");
 
   return (
-    <div className="border-b border-white/5">
+    <div className="border-b border-primary/5">
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
@@ -116,14 +116,14 @@ export function MobileProductMenu({
       >
         <span
           className={`font-heading text-[clamp(2rem,8vw,3rem)] leading-none font-semibold tracking-[-0.04em] transition-colors duration-200 ${
-            active ? "text-orange" : "text-white/85"
+            active ? "text-orange" : "text-primary/85"
           }`}
         >
           Products
         </span>
         <BsChevronDown
           aria-hidden="true"
-          className={`text-lg text-white/60 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`text-lg text-primary/60 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -145,7 +145,7 @@ export function MobileProductMenu({
                   className={`rounded-xl px-4 py-3 font-sans text-base font-medium transition-colors duration-200 ${
                     pathname === link.href
                       ? "bg-orange/10 text-orange"
-                      : "text-white/70 hover:text-white"
+                      : "text-primary/70 hover:text-primary"
                   }`}
                 >
                   {link.label}

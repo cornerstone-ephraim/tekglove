@@ -13,7 +13,7 @@ export default function NotFound() {
       <div className="relative z-10 grid w-full items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <p className="section-kicker mb-6">404 · Page Not Found</p>
-          <h1 className="display-title mb-7 max-w-[8ch] text-[clamp(4rem,9vw,8rem)] tracking-[-0.055em] text-white">
+          <h1 className="display-title mb-7 max-w-[8ch] text-[clamp(4rem,9vw,8rem)] tracking-[-0.055em] text-primary">
             Signal
             <br />
             <span className="text-orange">Lost.</span>
@@ -45,7 +45,7 @@ export default function NotFound() {
             >
               404
             </span>
-            <div className="absolute right-6 bottom-6 left-6 flex items-center justify-between border-t border-white/10 pt-5 font-mono text-xs tracking-[0.08em] text-white/55 sm:right-8 sm:bottom-8 sm:left-8">
+            <div className="absolute right-6 bottom-6 left-6 flex items-center justify-between border-t border-primary/10 pt-5 font-mono text-xs tracking-[0.08em] text-primary/55 sm:right-8 sm:bottom-8 sm:left-8">
               <span>Connection Status</span>
               <span className="flex items-center gap-2 text-orange">
                 <span className="h-1.5 w-1.5 rounded-full bg-orange" />

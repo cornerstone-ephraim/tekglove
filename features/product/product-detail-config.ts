@@ -1,7 +1,6 @@
 import {
   Crosshair,
   Hand,
-  Headphones,
   HeartPulse,
   MousePointer2,
   Shield,
@@ -25,193 +24,187 @@ export const productDetailConfigs = {
     name: "Kinetik",
     accentColor: "kinetik",
     accentSource: "#60a922",
-    mark: "KINETIK™",
-    eyebrow: "KINETIK™ · Flagship",
-    title: "TekGlove",
-    titleAccent: "V1",
-    subtitle: "Data in the Palm of Your Hand.",
+    mark: "KINETIK\u2122",
+    eyebrow: "Robotics \u00b7 Kinetik",
+    title: "Kinetik",
+    titleAccent: "",
+    subtitle: "Motion. Grip. Gesture.",
     introduction:
-      "The performance expression of the TekGlove platform, interpreting movement, grip, gestures, biometrics, and hand position without restricting how you move.",
+      "Kinetik is the robotics direction of TekGlove, exploring how hand movement, grip and deliberate gestures can inform interaction with machines.",
     shader: "sensor",
-    signalLabel: "Smart Dorsal Sensor",
-    signalValue: "Motion · Grip · Gesture · Position",
-    heroVisual: { image: "/images/kinetik-hero.webp", icon: Crosshair },
+    signalLabel: "In development",
+    signalValue: "Motion. Grip. Gesture.",
+    heroVisual: {
+      image: "/images/redesign/kinetik-poster.png",
+      video: "/videos/tekglove-kinetik-video.webm",
+      portraitVideo: "/videos/tekglove-kinetik-video-portrait.webm",
+      portraitImage: "/images/redesign/kinetik-portrait.png",
+      imageAlt: "Kinetik glove with mesh fabric and a dorsal display",
+      presentation: "editorial",
+      icon: Crosshair,
+    },
     specifications: [
-      { label: "Core Technology", value: "Smart Dorsal Sensor" },
-      { label: "Specialist Module", value: "Performance sensing glove" },
-      { label: "Data", value: "Motion · Grip · Gesture · Biometrics" },
-      { label: "Connectivity", value: "Bluetooth / Wi-Fi" },
-      { label: "Accessory Support", value: "Watch · Wireless earbuds" },
       {
-        label: "Construction",
-        value: "Performance materials · Grip-focused design",
-      },
-      { label: "Protection", value: "Weather-ready design in development" },
-      { label: "Companion", value: "KINETIK app · AI coaching" },
-    ],
-    showcases: [
-      {
-        image: "/images/kinetik-sensor-front.webp",
-        icon: Crosshair,
-        kicker: "Left Hand · Shared Interface",
-        title: "Smart Interface Glove",
-        description:
-          "The Smart Dorsal Sensor captures movement, grip, gestures, biometrics, and hand position while keeping the palm and fingers free to move naturally.",
+        label: "Direction",
+        value: "Robotics",
       },
       {
-        image: "/images/kinetik-biometric-front.webp",
-        icon: Headphones,
-        kicker: "Right Hand · Specialist Module",
-        title: "Performance & Accessory Glove",
-        description:
-          "The specialist glove extends performance sensing and can securely hold connected accessories such as wireless earbuds, keeping them available without making them the core product.",
+        label: "Focus",
+        value: "Motion. Grip. Gesture.",
+      },
+      {
+        label: "Status",
+        value: "In development",
+      },
+      {
+        label: "Connected experience",
+        value: "The TEK App",
       },
     ],
+    showcases: [],
     intelligence: {
-      kicker: "Hand-First Performance",
-      title: "The Hand Holds",
-      titleAccent: "Actionable Data.",
+      kicker: "The direction",
+      title: "Designed around",
+      titleAccent: "human activity.",
       description:
-        "Every movement, grip, gesture, and physical response contains information. KINETIK captures that information at the hand and transforms it into insight you can use.",
+        "Kinetik is the robotics direction of TekGlove, exploring how hand movement, grip and deliberate gestures can inform interaction with machines.",
       capabilities: [
         {
-          title: "Motion Tracking",
-          description:
-            "Measure movement, orientation, speed, and hand position through every session.",
+          title: "Motion capture",
+          description: "Explore hand movement and orientation.",
         },
         {
-          title: "Grip Sensing",
-          description:
-            "Understand grip force, control, fatigue, and interaction with equipment.",
+          title: "Grip sensing",
+          description: "Understand contact and grip as inputs.",
         },
         {
-          title: "Biometric Context",
-          description:
-            "Connect physical response with movement data for a more complete view.",
+          title: "Gesture input",
+          description: "Translate intentional hand poses into interaction.",
         },
         {
-          title: "Performance Insight",
-          description:
-            "Turn live signals into coaching feedback, trends, and useful alerts.",
+          title: "Human\u2013machine interaction",
+          description: "Connect physical actions with digital systems.",
         },
       ],
     },
     useCases: {
-      kicker: "Performance Use Cases",
-      title: "Built to Measure",
-      titleAccent: "How You Move.",
-      items: ["Boxing", "Cycling", "Tennis", "Football", "Golf", "Running"],
+      kicker: "Applications in development",
+      title: "Made for",
+      titleAccent: "what comes next.",
+      items: [
+        "Motion capture",
+        "Grip sensing",
+        "Gesture input",
+        "Human\u2013machine interaction",
+      ],
     },
     cta: {
-      kicker: "KINETIK Early Access",
-      title: "Be First to",
-      titleAccent: "Move Smarter.",
+      kicker: "Kinetik early access",
+      title: "Help shape",
+      titleAccent: "Kinetik.",
       description:
-        "Join the TekGlove early access list for KINETIK development updates, beta opportunities, and product availability.",
+        "Join the waitlist for development updates and early access opportunities.",
     },
   },
   Kradle: {
     name: "Kradle",
     accentColor: "kradle",
     accentSource: "#786090",
-    mark: "KRADLE™",
-    eyebrow: "KRADLE™ · Maternal Health",
-    title: "Connected",
-    titleAccent: "Care",
-    subtitle: "Important Signals, Held Close.",
+    mark: "KRADLE\u2122",
+    eyebrow: "Sports \u00b7 Kradle",
+    title: "Kradle",
+    titleAccent: "",
+    subtitle: "Health. Fitness. Wellness.",
     introduction:
-      "The maternal health expression of the TekGlove platform, combining the Smart Dorsal Sensor with a Doppler module to bring maternal and fetal signals closer to the people who need them.",
+      "Kradle is a modular health, fitness and wellness sensor. Dock it on the TEK Glove for sport, wear it on a watch strap for daily use, or carry it on a keyring.",
     shader: "sensor",
-    signalLabel: "Smart Dorsal Sensor",
-    signalValue: "Movement · Gesture · Biometrics · Alerts",
+    signalLabel: "In development",
+    signalValue: "Health. Fitness. Wellness.",
     heroVisual: {
-      image: "/images/kradle-care.webp",
-      imageAlt:
-        "Midwife using the Kradle glove during a maternal health examination",
+      image: "/images/redesign/tekglove-kradle.webp",
+      video: "/videos/tekglove-kradle-video.webm",
+      portraitVideo: "/videos/tekglove-kradle-video-portrait.webm",
+      portraitImage: "/images/redesign/tekglove-kradle-portrait.webp",
+      imageAlt: "TEK Glove with a round Kradle sensor in its dorsal dock",
       presentation: "editorial",
       icon: HeartPulse,
     },
     specifications: [
-      { label: "Purpose", value: "Maternal and health monitoring" },
-      { label: "Core Technology", value: "Smart Dorsal Sensor" },
-      { label: "Specialist Module", value: "Doppler sensor glove" },
-      { label: "Maternal Signals", value: "Heart rate · SpO₂ · Temperature" },
-      { label: "Pregnancy Insight", value: "Heartbeat · Movement context" },
-      { label: "Care Network", value: "Kradle Centres · Remote clinicians" },
-      { label: "Connectivity", value: "Bluetooth / Wi-Fi" },
-      { label: "Support", value: "AI guidance · Care alerts in development" },
+      { label: "System", value: "TEK Glove + removable Kradle sensor" },
+      { label: "Mounting", value: "Dorsal dock · Watch strap · Keyring" },
+      { label: "Interface", value: "Touch display" },
+      { label: "Sensor direction", value: "Heart rate · SpO₂ · HRV" },
+      { label: "Audio", value: "Bluetooth stethoscope · Embedded earbuds" },
+      {
+        label: "Construction",
+        value: "Breathable mesh · Grippy palm · Durable sports fabric",
+      },
+      { label: "Connected experience", value: "The TEK App · AI assistance" },
+      {
+        label: "Status",
+        value:
+          "Concept in development; measurements depend on sensor contact and placement",
+      },
     ],
     showcases: [],
     intelligence: {
-      kicker: "Hand-Connected Care",
-      title: "Signals Become",
-      titleAccent: "Earlier Awareness.",
+      kicker: "Capabilities in development",
+      title: "Designed around",
+      titleAccent: "human activity.",
       description:
-        "KRADLE brings maternal and fetal signals into a connected hand-worn system, helping caregivers see useful changes and respond with better context.",
+        "Kradle is a modular health, fitness and wellness sensor. Dock it on the TEK Glove for sport, wear it on a watch strap for daily use, or carry it on a keyring.",
       capabilities: [
         {
-          title: "Fetal Heartbeat",
+          title: "Health monitoring",
           description:
-            "Use Doppler sensing to support accessible fetal heartbeat detection.",
+            "Proposed heart-rate, blood-oxygen and heart-rate-variability sensing, with stress insights.",
         },
         {
-          title: "Maternal Biometrics",
+          title: "Bluetooth stethoscope",
           description:
-            "Monitor heart rate, blood oxygen, and body temperature together.",
+            "A sound-capture concept for heart, lung and body sounds.",
         },
         {
-          title: "Pregnancy Context",
+          title: "Fitness tracking",
           description:
-            "Bring fetal movement context, reminders, and care alerts into one connected view.",
+            "Activity, training load, calorie estimates and performance context.",
         },
         {
-          title: "Connected Care",
+          title: "AI assistance",
           description:
-            "Link wearable signals with telemedicine support and Kradle Centres.",
+            "Coaching, insights and recovery guidance through the connected experience.",
+        },
+        {
+          title: "Wellness",
+          description:
+            "Sleep, recovery and readiness insights to help put activity in context.",
+        },
+        {
+          title: "Embedded earbuds",
+          description:
+            "Audio, calls and coaching, with earbuds housed inside the module.",
         },
       ],
     },
-    overview: {
-      kicker: "The Kradle Glove",
-      title: "Purpose-Built for",
-      titleAccent: "Connected Care.",
-      description:
-        "A wearable Doppler glove designed to help midwives and healthcare professionals bring fetal heartbeat monitoring into connected maternal care.",
-      image: "/images/kradle-glove-overview.webp",
-      imageAlt:
-        "Palm and dorsal views of the Kradle wearable fetal Doppler glove",
-      technical: {
-        kicker: "Technical Breakdown",
-        title: "Inside the Kradle Glove.",
-        description:
-          "A closer view of the sensing architecture, display, wrist system, and charging details that shape the Kradle Glove concept.",
-        crossSectionImage: "/images/kradle-glove-cross-section.webp",
-        crossSectionImageAlt:
-          "Exploded cross-section of the Kradle glove showing its display, electronics, battery, haptic motor, Doppler transducer, acoustic coupling pad, and palm layer",
-        detailImage: "/images/kradle-glove-detail-views.webp",
-        detailImageAlt:
-          "Close-up views of the Kradle glove Doppler transducer, display, adjustable wrist strap, and USB-C charging port",
-      },
-    },
     useCases: {
-      kicker: "Care Use Cases",
-      title: "Designed Around",
-      titleAccent: "Maternal Care.",
+      kicker: "Applications in development",
+      title: "Made for",
+      titleAccent: "what comes next.",
       items: [
-        "Pregnant Women",
-        "Midwives",
-        "Doctors",
-        "Rural Health Workers",
-        "Maternal Health NGOs",
-        "Kradle Centres",
+        "Running",
+        "Cycling",
+        "Boxing",
+        "Golf",
+        "Hiking",
+        "Everyday wellness",
       ],
     },
     cta: {
-      kicker: "KRADLE Early Access",
-      title: "Help Shape",
-      titleAccent: "Connected Care.",
+      kicker: "Kradle early access",
+      title: "Help shape",
+      titleAccent: "Kradle.",
       description:
-        "Join the TekGlove early access list for KRADLE development updates, collaboration opportunities, and future availability.",
+        "Join the waitlist for development updates and early access opportunities.",
     },
   },
   Kovert: {
