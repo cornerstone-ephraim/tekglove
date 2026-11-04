@@ -87,8 +87,8 @@ export function PlatformStory() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative aspect-square overflow-hidden rounded-3xl bg-white">
             <Image
-              src="/images/redesign/model-breakdown.png"
-              alt="Exploded concept showing the glove, mounting layers and display module"
+              src="/images/redesign/prototype-grip.png"
+              alt="TekGlove prototype showing its textured grip and wrist control"
               fill
               sizes="(min-width: 1024px) 45vw, 90vw"
               className="object-contain p-6"

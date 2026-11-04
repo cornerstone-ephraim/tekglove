@@ -22,13 +22,13 @@ export function Hero() {
       >
         <p className="mb-7 text-sm font-medium">Introducing Tek Glove</p>
         <h1 className="max-w-2xl text-6xl leading-none font-medium tracking-tight md:text-7xl lg:text-8xl">
-          The Smart
+          The AI Smart
           <br />
           Glove,
           <br />
           <span className="text-copy-secondary">Reinvented.</span>
         </h1>
-        <p className="mt-8 max-w-88 text-base leading-relaxed text-copy-secondary">
+        <p className="mt-8 max-w-88 text-base leading-relaxed text-primary md:text-copy-secondary">
           {site.description}
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-6">

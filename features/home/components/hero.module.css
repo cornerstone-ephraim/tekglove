@@ -21,3 +21,16 @@
   margin-top: auto;
   padding-top: 2rem;
 }
+
+@media (width < 48rem) {
+  .hero.hero .film::after {
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--bg) 90%, transparent) 0%,
+      color-mix(in srgb, var(--bg) 78%, transparent) 35%,
+      color-mix(in srgb, var(--bg) 88%, transparent) 60%,
+      color-mix(in srgb, var(--bg) 82%, transparent) 78%,
+      color-mix(in srgb, var(--bg) 90%, transparent) 100%
+    );
+  }
+}

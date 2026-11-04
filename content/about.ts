@@ -63,6 +63,6 @@ export const team = [
   {
     name: "Keniye B. Koroye",
     role: "Founder & Designer",
-    bio: "An industrial designer, product analyst, and entrepreneur celebrated for merging African cultural narratives with global innovation. A SCAD alum and Tech Nation Global Talent ambassador, Keniye has designed for brands like Tecno Mobile and AFA Sports, and holds a patent for the Tek Glove. Based in London, he specializes in bridging the gap between high-impact hardware and fintech strategy.",
+    bio: "An industrial designer, product analyst, and entrepreneur celebrated for merging African cultural narratives with global innovation. A SCAD alum and Tech Nation Global Talent ambassador, Keniye has designed for brands like Tecno Mobile and AFA Sports, and holds a patent for the Tek Glove. His own experience riding bikes helped inspire TekGlove and the decision to build a glove-based product. Based in London, he specializes in bridging the gap between high-impact hardware and physical AI.",
   },
 ];

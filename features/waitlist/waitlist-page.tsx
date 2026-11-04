@@ -1,73 +1,34 @@
 "use client";
 
-import { useReducedMotion } from "@/shared/hooks/use-reduced-motion";
-
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
-import { ShaderBackdrop } from "@/shared/components/ui/shader-backdrop";
 import { WaitlistForm } from "./components/waitlist-form";
 import { WaitlistSuccess } from "./components/waitlist-success";
 
 export default function WaitlistPage() {
   const [complete, setComplete] = useState(false);
-  const reduceMotion = useReducedMotion();
-
   return (
-    <section className="relative min-h-svh overflow-hidden bg-bg px-5 pt-32 pb-20 sm:px-8 lg:px-12 lg:pt-40 lg:pb-28">
-      <ShaderBackdrop
-        variant="waitlist"
-        className="mask-[radial-gradient(ellipse_at_65%_38%,black,transparent_72%)] opacity-45"
-      />
-      <div className="pointer-events-none absolute top-[16%] right-[8%] h-96 w-96 rounded-full bg-orange/8 blur-[120px]" />
-
-      <div className="relative mx-auto w-full max-w-350">
-        <motion.header
-          initial={{ opacity: 0, y: reduceMotion ? 0 : 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: reduceMotion ? 0.2 : 0.6 }}
-          className="mb-12 max-w-225 sm:mb-16"
-        >
+    <section className="min-h-svh bg-bg px-6 pt-40 pb-20 md:px-12 lg:px-20 lg:pt-48">
+      <div className="mx-auto grid max-w-350 gap-14 lg:grid-cols-2 lg:gap-24">
+        <header>
           <p className="section-kicker mb-6">Early access</p>
-          <h1 className="display-title max-w-[12ch] text-[clamp(3.25rem,7vw,7rem)] text-primary">
-            Be part of what comes next.
+          <h1 className="display-title max-w-[10ch] text-[clamp(3.25rem,6vw,6rem)] text-primary">
+            The next step starts with you.
           </h1>
-          <p className="copy-secondary mt-8 max-w-[48ch] text-base leading-[1.75] sm:text-lg">
-            Join the TekGlove waitlist for development updates, early testing
-            opportunities, and first access to the gloves that matter to you.
+          <p className="mt-8 max-w-100 text-lg leading-relaxed text-copy-secondary">
+            Join the TekGlove waitlist for development updates, testing
+            opportunities and early access.
           </p>
-
-          <div className="mt-10 flex max-w-160 items-center gap-4 border-t border-primary/10 pt-6">
-            <span className="h-2 w-2 rounded-full bg-orange shadow-[0_0_18px_var(--orange)]" />
-            <p className="font-mono text-xs tracking-[0.08em] text-primary/55">
-              One platform. Six connected gloves.
-            </p>
-          </div>
-        </motion.header>
-
-        <motion.div
-          initial={{ opacity: 0, y: reduceMotion ? 0 : 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: reduceMotion ? 0.2 : 0.65,
-            delay: reduceMotion ? 0 : 0.08,
-          }}
-          className="surface-panel relative overflow-hidden p-5 sm:p-8 lg:p-10"
-        >
-          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-linear-to-r from-transparent via-orange/70 to-transparent" />
-          <AnimatePresence mode="wait" initial={false}>
-            {complete ? (
-              <WaitlistSuccess
-                key="success"
-                onResetAction={() => setComplete(false)}
-              />
-            ) : (
-              <WaitlistForm
-                key="form"
-                onCompleteAction={() => setComplete(true)}
-              />
-            )}
-          </AnimatePresence>
-        </motion.div>
+          <p className="mt-10 text-sm text-copy-muted">
+            The hand is the starting point.
+          </p>
+        </header>
+        <div className="min-w-0 lg:pt-3">
+          {complete ? (
+            <WaitlistSuccess onResetAction={() => setComplete(false)} />
+          ) : (
+            <WaitlistForm onCompleteAction={() => setComplete(true)} />
+          )}
+        </div>
       </div>
     </section>
   );

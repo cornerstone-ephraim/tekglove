@@ -2,19 +2,19 @@ import { escapeHtml } from "../utils/escape-html";
 
 type WaitlistConfirmationEmailOptions = {
   confirmationUrl: string;
-  firstName: string;
+  firstName?: string;
 };
 
 export function createWaitlistConfirmationEmail({
   confirmationUrl,
   firstName,
 }: WaitlistConfirmationEmailOptions) {
-  const safeFirstName = escapeHtml(firstName);
+  const safeFirstName = escapeHtml(firstName || "there");
   const safeConfirmationUrl = escapeHtml(confirmationUrl);
 
   return {
     subject: "Confirm your place on the TekGlove waitlist",
-    text: `Hi ${firstName},\n\nConfirm your email to join the TekGlove waitlist:\n${confirmationUrl}\n\nThis link expires in 24 hours. If you did not request this, you can ignore this email.`,
+    text: `Hi ${firstName || "there"},\n\nConfirm your email to join the TekGlove waitlist:\n${confirmationUrl}\n\nThis link expires in 24 hours. If you did not request this, you can ignore this email.`,
     html: `
       <!doctype html>
       <html lang="en">

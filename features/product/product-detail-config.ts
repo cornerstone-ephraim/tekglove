@@ -35,10 +35,8 @@ export const productDetailConfigs = {
     signalLabel: "In development",
     signalValue: "Motion. Grip. Gesture.",
     heroVisual: {
-      image: "/images/redesign/kinetik-poster.png",
-      video: "/videos/tekglove-kinetik-video.webm",
-      portraitVideo: "/videos/tekglove-kinetik-video-portrait.webm",
-      portraitImage: "/images/redesign/kinetik-portrait.png",
+      image: "/images/redesign/kinetik-right-hand.png",
+      video: "/videos/kinetik-right-hand.webm",
       imageAlt: "Kinetik glove with mesh fabric and a dorsal display",
       presentation: "editorial",
       icon: Crosshair,

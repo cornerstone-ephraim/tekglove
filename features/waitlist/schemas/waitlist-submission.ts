@@ -57,8 +57,8 @@ const optionalText = (maximumLength: number) =>
     .transform((value) => value || undefined);
 
 export const waitlistSubmissionSchema = z.object({
-  firstName: z.string().trim().min(1).max(80),
-  lastName: z.string().trim().min(1).max(80),
+  firstName: optionalText(80),
+  lastName: optionalText(80),
   email: z.string().trim().toLowerCase().pipe(z.email().max(320)),
   marketingConsent: z.literal(true, {
     error: "Consent is required to join the waitlist.",

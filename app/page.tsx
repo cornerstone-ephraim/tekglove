@@ -1,8 +1,8 @@
-  import { createPageMetadata } from "@/shared/seo/metadata";
+import { createPageMetadata } from "@/shared/seo/metadata";
 
 export const metadata = createPageMetadata({
-  title: "The Smart Glove, Reinvented.",
-  absoluteTitle: "TekGlove | The Smart Glove, Reinvented.",
+  title: "The AI Smart Glove, Reinvented.",
+  absoluteTitle: "TekGlove | The AI Smart Glove, Reinvented.",
   description:
     "Discover TekGlove, a wearable hand-data platform that turns movement, grip, gestures, and physical response into useful insight across six industries.",
   path: "/",

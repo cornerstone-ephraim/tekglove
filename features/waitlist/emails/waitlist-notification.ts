@@ -4,9 +4,9 @@ import { escapeHtml } from "../utils/escape-html";
 type WaitlistNotificationEmailOptions = {
   countryCode: string | null;
   email: string;
-  firstName: string;
+  firstName: string | null;
   intendedUse: string | null;
-  lastName: string;
+  lastName: string | null;
   organisationName: string | null;
   productInterests: string[];
   useCase: string | null;
@@ -38,7 +38,9 @@ function formatProductInterests(productInterests: string[]) {
 export function createWaitlistNotificationEmail(
   options: WaitlistNotificationEmailOptions,
 ) {
-  const fullName = `${options.firstName} ${options.lastName}`;
+  const fullName =
+    [options.firstName, options.lastName].filter(Boolean).join(" ") ||
+    options.email;
   const productInterests =
     formatProductInterests(options.productInterests) || "Not provided";
   const intendedUse = formatIntendedUse(options.intendedUse);

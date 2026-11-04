@@ -1,3 +1,4 @@
+import { knkModes } from "@/content/knksports";
 import { ButtonLink } from "@/shared/components/ui/button";
 import { ProductFilm } from "@/shared/components/ui/product-film";
 import { ConnectedSystem } from "./components/connected-system";
@@ -23,9 +24,10 @@ export default function KnkSportsPage() {
             <br />
             the athlete.
           </h1>
-          <p className="mt-8 max-w-88 text-lg leading-relaxed text-copy-secondary">
-            Health, fitness and wellness, starting with Kradle. The TEK Glove
-            and removable Kradle sensor, brought into the athlete’s world.
+          <p className="mt-8 max-w-88 text-lg leading-relaxed text-primary md:text-copy-secondary">
+            AI-powered health, fitness and wellness, starting with Kradle. The
+            TEK Glove, removable sensor and Edwin AI coach bring your activity
+            into focus.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <ButtonLink href="/waitlist">Get Early Access</ButtonLink>
@@ -36,12 +38,44 @@ export default function KnkSportsPage() {
         </div>
         <div className="hero-caption pointer-events-none relative z-10 flex justify-between px-6 pt-12 pb-8 text-xs text-copy-secondary md:px-12 lg:px-20">
           <span>The hand is the starting point.</span>
-          <span>Concept film · In development</span>
+          {/* <span>Concept film · In development</span> */}
         </div>
       </section>
       <AthleteActivities />
       <ConnectedSystem />
       <SportsApparel />
+      <section className="px-6 py-24 md:px-12 lg:px-20">
+        <div className="mb-12 grid gap-8 md:grid-cols-2">
+          <h2 className="story-heading">
+            One platform.
+            <br />
+            Different modes.
+          </h2>
+          <div className="max-w-xl space-y-4 text-lg leading-relaxed text-copy-secondary">
+            <p>
+              Alongside athlete activities, these six KNK Sports modes shape how
+              the connected system can serve different environments.
+            </p>
+            <p className="text-sm">
+              Capabilities describe our design direction. Final specifications
+              and availability will follow as development progresses.
+            </p>
+          </div>
+        </div>
+        <div className="grid gap-x-12 md:grid-cols-2 lg:grid-cols-3">
+          {knkModes.map((mode) => (
+            <article key={mode.name} className="border-t border-border py-8">
+              <p className="text-sm text-copy-secondary">{mode.focus}</p>
+              <h3 className="mt-3 text-3xl font-medium">{mode.name}</h3>
+              <ul className="mt-6 space-y-3 text-copy-secondary">
+                {mode.features.map((feature) => (
+                  <li key={feature}>{feature}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </section>
       <section className="curve-section bg-surface px-6 py-24 text-center md:px-12 md:py-32">
         <p className="mb-6 text-sm text-copy-secondary">
           KNK Sports early access

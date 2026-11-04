@@ -21,8 +21,8 @@ export async function submitWaitlistEntry(input: unknown) {
   const { data: entry, error: entryError } = await supabase
     .from("waitlist_entries")
     .insert({
-      first_name: submission.firstName,
-      last_name: submission.lastName,
+      first_name: submission.firstName ?? null,
+      last_name: submission.lastName ?? null,
       email: submission.email,
       marketing_consent: submission.marketingConsent,
       intended_use: submission.intendedUse,

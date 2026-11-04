@@ -13,8 +13,8 @@ export function ConnectedSystem() {
         <p className="max-w-lg text-lg leading-relaxed text-copy-secondary">
           TEK Glove provides the breathable, flexible sports glove. Kradle is
           the removable health, fitness and wellness sensor that fits into its
-          dorsal dock. The TEK App brings controls and recorded information
-          together.
+          dorsal dock. The TEK App connects that information with Edwin AI for
+          coaching, training insights and recovery guidance.
         </p>
       </div>
       <div className="grid overflow-hidden rounded-3xl bg-paper lg:grid-cols-2">
@@ -95,6 +95,37 @@ export function ConnectedSystem() {
         Supported measurements depend on sensor contact and placement; a keyring
         mount does not provide the same measurements as wearing the sensor.
       </p>
+      <div className="mt-12 border-t border-primary/20 pt-10">
+        <p className="text-sm text-copy-secondary">Edwin AI · In development</p>
+        <h3 className="mt-4 text-3xl font-medium md:text-4xl">
+          Understand your training.
+          <br />
+          Plan what comes next.
+        </h3>
+        <div className="mt-8 grid gap-8 md:grid-cols-3">
+          <div>
+            <h4 className="text-xl font-medium">Personal coaching</h4>
+            <p className="mt-3 leading-relaxed text-copy-secondary">
+              Edwin is being designed to turn supported sensor data and your
+              activity context into practical training guidance.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-xl font-medium">Performance insights</h4>
+            <p className="mt-3 leading-relaxed text-copy-secondary">
+              AI-assisted interpretation can help you explore patterns in
+              activity and training load, and follow progress over time.
+            </p>
+          </div>
+          <div>
+            <h4 className="text-xl font-medium">Recovery and wellness</h4>
+            <p className="mt-3 leading-relaxed text-copy-secondary">
+              Bring sleep, recovery and readiness information into the
+              conversation, with guidance shaped around your routine.
+            </p>
+          </div>
+        </div>
+      </div>
       <ol className="mt-12 grid gap-8 md:grid-cols-3">
         {[
           ["Wear", "Start with the glove and a setup suited to your activity."],

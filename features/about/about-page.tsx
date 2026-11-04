@@ -24,12 +24,10 @@ export default function AboutPage() {
       </header>
       <div className="px-3 md:px-6">
         <ProductFilm
-          src="/videos/tekglove-hero-video.webm"
-          poster="/images/redesign/tekglove-hero-picture.jpeg"
-          portraitSrc="/videos/tekglove-hero-video-portrait.webm"
-          portraitPoster="/images/redesign/kradle-portrait.png"
-          label="TekGlove design concept"
-          className="aspect-3/4 rounded-3xl md:aspect-16/7"
+          src="/videos/three-gloves.webm"
+          poster="/images/redesign/three-gloves.webp"
+          label="Three TekGlove design prototypes"
+          className="aspect-video rounded-3xl"
         />
       </div>
       <section className="grid gap-10 px-6 py-24 md:px-12 lg:grid-cols-2 lg:px-20">
@@ -82,8 +80,8 @@ export default function AboutPage() {
       <section className="grid items-center gap-12 px-6 py-24 md:px-12 lg:grid-cols-2 lg:px-20">
         <div className="relative aspect-square overflow-hidden rounded-3xl bg-white">
           <Image
-            src="/images/redesign/model-breakdown.png"
-            alt="Exploded TekGlove concept showing the glove, mounting system and display"
+            src="/images/redesign/prototype-sensor.png"
+            alt="Early TekGlove prototype with a rectangular sensor and textured fabric"
             fill
             sizes="(min-width: 1024px) 45vw, 90vw"
             className="object-contain p-6"

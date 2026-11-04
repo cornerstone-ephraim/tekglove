@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { ProductFilm } from "@/shared/components/ui/product-film";
+import Image from "next/image";
+import { ButtonLink } from "@/shared/components/ui/button";
 
 const views = {
   Motion: "Explore the shape and orientation of a hand in motion.",
@@ -13,7 +14,9 @@ export function MotionDemo() {
     <section className="px-6 py-24 md:px-12 lg:px-20">
       <div className="mb-12 grid gap-8 md:grid-cols-2 md:items-end">
         <div>
-          <p className="mb-6 text-sm text-copy-secondary">Kinetik · Robotics</p>
+          <p className="mb-6 text-sm text-copy-secondary">
+            Kradle &amp; Kinetik
+          </p>
           <h2 className="story-heading">
             Every movement
             <br />
@@ -21,19 +24,43 @@ export function MotionDemo() {
           </h2>
         </div>
         <p className="max-w-lg text-lg leading-relaxed text-copy-secondary">
-          We’re exploring how motion, grip and gesture can become useful inputs
-          for robotics. A closer look at the direction we’re building toward.
+          From health, fitness and wellness with Kradle to motion, grip and
+          gesture with Kinetik, each system gives the hand a different role.
         </p>
       </div>
+      <div className="mb-12 grid gap-8 rounded-3xl bg-sage p-8 md:p-12 lg:grid-cols-2">
+        <div>
+          <p className="text-sm text-copy-secondary">Kradle · KNK Sports</p>
+          <h3 className="mt-4 text-3xl font-medium md:text-4xl">
+            A closer understanding
+            <br />
+            of your wellbeing.
+          </h3>
+        </div>
+        <div>
+          <p className="max-w-lg text-lg leading-relaxed text-copy-secondary">
+            The removable Kradle sensor brings health, fitness and wellness into
+            the TEK Glove system. Edwin AI is being developed to help interpret
+            activity, training and recovery information.
+          </p>
+          <ButtonLink href="/knksports" variant="secondary" className="mt-6">
+            Explore Kradle
+          </ButtonLink>
+        </div>
+      </div>
+      <h3 className="mb-6 text-3xl font-medium">
+        Kinetik · Motion, grip and gesture
+      </h3>
       <div className="grid overflow-hidden rounded-3xl border border-border lg:grid-cols-2">
-        <ProductFilm
-          src="/videos/tekglove-kinetik-video.webm"
-          portraitSrc="/videos/tekglove-kinetik-video.webm"
-          portraitPoster="/images/redesign/kinetik-portrait.png"
-          poster="/images/redesign/kinetik-poster.png"
-          label="Kinetik concept film"
-          className="bg-surface md:aspect-4/3 lg:aspect-auto lg:self-stretch lg:[&>video]:absolute lg:[&>video]:inset-0"
-        />
+        <figure className="relative aspect-video bg-surface lg:aspect-auto">
+          <Image
+            src="/images/redesign/kinetik-right-hand.png"
+            alt="Right-hand Kinetik glove demonstrating a closed grip"
+            fill
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            className="object-cover"
+          />
+        </figure>
         <div className="flex flex-col bg-ink p-7 text-paper md:p-9">
           <div
             className="flex flex-wrap gap-2"

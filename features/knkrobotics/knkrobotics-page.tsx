@@ -37,12 +37,10 @@ export default function KnkRoboticsPage() {
       </header>
       <figure className="px-3 md:px-6">
         <ProductFilm
-          src="/videos/tekglove-kinetik-video.webm"
-          portraitSrc="/videos/tekglove-kinetik-video-portrait.webm"
-          poster="/images/redesign/kinetik-poster.png"
-          portraitPoster="/images/redesign/kinetik-portrait.png"
+          src="/videos/kinetik-right-hand.webm"
+          poster="/images/redesign/kinetik-right-hand.png"
           label="Kinetik glove concept film"
-          className="aspect-9/16 rounded-3xl md:aspect-16/7"
+          className="aspect-video rounded-3xl"
         />
         <figcaption className="px-3 pt-4 text-xs text-copy-secondary md:px-6">
           Kinetik concept imagery. Industrial hardware and robotic training
@@ -183,11 +181,11 @@ export default function KnkRoboticsPage() {
           the worker in mind.
         </h2>
         <p className="max-w-xl leading-relaxed text-copy-secondary">
-          TENS, heating and vibration require appropriate safety controls and
-          validation, particularly around heavy machinery. Operating conditions
-          and supported features will be defined through testing. The concept
-          does not establish pain-treatment outcomes or validated safety
-          protection.
+          TENS, optional heating and vibration require appropriate safety
+          controls and validation, particularly around heavy machinery.
+          Operating conditions and supported features will be defined through
+          testing. The concept does not establish pain-treatment outcomes or
+          validated safety protection.
         </p>
       </section>
       <section className="px-6 pb-24 md:px-12 lg:px-20">
