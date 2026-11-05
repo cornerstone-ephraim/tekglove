@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { site } from "@/content/site";
 
 const socialImage = {
-  url: "/images/tekglove_front.png",
-  width: 2000,
-  height: 2000,
+  url: "/og-image.png",
+  width: 1200,
+  height: 630,
   alt: "TekGlove wearable with the Smart Dorsal Sensor",
 };
 

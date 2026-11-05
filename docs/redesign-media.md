@@ -23,3 +23,12 @@ Kradle: sports, health, fitness and wellness. Kinetik: robotics, motion, grip an
 Dedicated fingerless Kradle media now replaces the earlier shared-glove visuals on KNK Sports and the Kradle product page. Both heroes use the landscape and portrait Kradle films with matching WebP posters. The main TekGlove homepage retains its original media.
 
 KNK Robotics uses the existing Kinetik concept film. Missing assets: industrial prototype photography, construction/logistics/manufacturing task footage, and a validated demonstration-to-robot training example.
+
+## November media update
+
+- About hero: dedicated three-glove film and poster.
+- About approach: Ken’s sensor prototype render.
+- Home technology: Ken’s grip prototype render.
+- Home story: Kradle introduction followed by a Kinetik still and concept illustration.
+- Robotics and Kinetik detail: supplied right-hand film; poster extracted at three seconds. No older left-hand portrait source is used.
+- Sports retains Kradle media and now includes Edwin AI and all six modes.

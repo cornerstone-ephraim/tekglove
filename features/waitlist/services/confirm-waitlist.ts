@@ -9,9 +9,9 @@ export type ConfirmedWaitlistEntry = {
   id: string;
   countryCode: string | null;
   email: string;
-  firstName: string;
+  firstName: string | null;
   intendedUse: string | null;
-  lastName: string;
+  lastName: string | null;
   organisationName: string | null;
   productInterests: string[];
   useCase: string | null;

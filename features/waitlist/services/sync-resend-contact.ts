@@ -28,8 +28,8 @@ async function syncResendContact(entry: ConfirmedWaitlistEntry) {
   if (existingContact.error?.name === "not_found") {
     const createdContact = await resend.contacts.create({
       email: entry.email,
-      firstName: entry.firstName,
-      lastName: entry.lastName,
+      firstName: entry.firstName ?? undefined,
+      lastName: entry.lastName ?? undefined,
       segments: [{ id: serverEnv.resendWaitlistSegmentId }],
       topics,
       unsubscribed: false,
@@ -43,8 +43,8 @@ async function syncResendContact(entry: ConfirmedWaitlistEntry) {
 
   const updatedContact = await resend.contacts.update({
     email: entry.email,
-    firstName: entry.firstName,
-    lastName: entry.lastName,
+    firstName: entry.firstName ?? undefined,
+    lastName: entry.lastName ?? undefined,
   });
   if (updatedContact.error) throw new Error(updatedContact.error.message);
 

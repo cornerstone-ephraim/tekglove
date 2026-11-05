@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   applicationName: "TekGlove",
   title: {
-    default: "TekGlove | The Smart Glove, Reinvented.",
+    default: "TekGlove | The AI Smart Glove, Reinvented.",
     template: "%s | Tek Glove",
   },
   description: site.description,
@@ -49,6 +49,28 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     apple: "/tekglove_icon.png",
+  },
+  openGraph: {
+    title: "TekGlove | The AI Smart Glove, Reinvented.",
+    description: site.description,
+    url: site.url,
+    siteName: "TekGlove",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TekGlove. The AI Smart Glove, Reinvented.",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TekGlove | The AI Smart Glove, Reinvented.",
+    description: site.description,
+    images: ["/og-image.png"],
   },
 };
 

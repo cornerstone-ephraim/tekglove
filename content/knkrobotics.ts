@@ -20,7 +20,7 @@ export const roboticsCapabilities = [
       "Controlled warmth for cold working environments, subject to safety testing.",
   },
   {
-    title: "Optional TENS",
+    title: "TENS or EMS",
     description:
       "Electrical stimulation proposed for appropriate pain-management applications. Suitability, controls and operating conditions require validation.",
   },
@@ -33,16 +33,16 @@ export const roboticsCapabilities = [
 
 export const roboticsApplications = [
   {
-    title: "Construction",
-    description:
-      "Tool handling, assembly movements and skilled manual operations, captured as demonstrations for future construction robotics.",
-    examples: "Tool handling · Assembly · Manual operations",
-  },
-  {
     title: "Logistics",
     description:
       "Picking, packing, sorting and grasping demonstrations for warehouse automation and robotic manipulation.",
     examples: "Picking · Packing · Sorting",
+  },
+  {
+    title: "Construction",
+    description:
+      "Tool handling, assembly movements and skilled manual operations, captured as demonstrations for future construction robotics.",
+    examples: "Tool handling · Assembly · Manual operations",
   },
   {
     title: "Manufacturing",

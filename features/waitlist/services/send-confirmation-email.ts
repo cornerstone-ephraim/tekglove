@@ -6,7 +6,7 @@ import { createWaitlistConfirmationEmail } from "../emails/waitlist-confirmation
 type SendConfirmationEmailOptions = {
   confirmationToken: string;
   email: string;
-  firstName: string;
+  firstName?: string;
 };
 
 export class WaitlistEmailError extends Error {
